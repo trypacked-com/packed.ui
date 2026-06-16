@@ -4,8 +4,14 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
+    "build": "bun run build:registry && next build",
+    "build:registry": "bun run scripts/merge-registry-items.ts && bun run scripts/build-registry.ts",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "bun run scripts/build-storybook.ts",
+    "test:visual": "playwright test",
+    "test:visual:update": "playwright test --update-snapshots",
+    "lint": "biome check .",
+    "format": "biome format --write ."
   },
   "dependencies": {
     "@fontsource-variable/figtree": "^5.2.10",
