@@ -34,7 +34,7 @@ Match existing patterns — reuse shared surface/elevation helpers (role aliases
 
 - Manifest: `public/registry.json` (built, committed)
 - Per-item JSON: `public/r/{name}.json` via `build:registry`
-- Consumer namespace: `"@packed": "https://ui.trypacked.com/r/{name}.json"`
+- Consumer namespace: `"@packed": "https://ui.trypacked.dev/r/{name}.json"`
 
 ## Tokens
 

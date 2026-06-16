@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry.json",
   "name": "packed-ui-registry",
-  "homepage": "https://ui.trypacked.com/",
+  "homepage": "https://ui.trypacked.dev/",
   "items": [
     {
       "name": "button",

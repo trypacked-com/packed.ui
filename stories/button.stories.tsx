@@ -38,7 +38,7 @@ export const Sizes: Story = {
       <Button {...args} size="sm">
         Small
       </Button>
-      <Button {...args} size="md">
+      <Button {...args} size="default">
         Medium
       </Button>
       <Button {...args} size="lg">

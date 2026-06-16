@@ -37,7 +37,7 @@ export default async function ComponentPage({
     notFound();
   }
 
-  const installCommand = `bunx shadcn@latest add https://ui.trypacked.com/r/${item.name}.json`;
+  const installCommand = `bunx shadcn@latest add https://ui.trypacked.dev/r/${item.name}.json`;
   const deps = item.dependencies ?? [];
   const registryDeps = item.registryDependencies ?? [];
 

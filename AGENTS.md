@@ -111,9 +111,9 @@ sharp corners; we use warm sand, soft warm-tinted shadows, and rounded corners).
 - Agency logos always sit inside the white **brand chip** (`--chip-*`).
 
 ## Registry
-- Base URL: `https://ui.trypacked.com/` *(placeholder — confirm host)*
-- Manifest: `https://ui.trypacked.com/registry.json`
-- Namespace: `"@packed": "https://ui.trypacked.com/r/{name}.json"` in consumer `components.json`
+- Base URL: `https://ui.trypacked.dev/` *(placeholder — confirm host)*
+- Manifest: `https://ui.trypacked.dev/registry.json`
+- Namespace: `"@packed": "https://ui.trypacked.dev/r/{name}.json"` in consumer `components.json`
 - Theme: `bunx shadcn@latest add @packed/theme`
 - Components: `bunx shadcn@latest add @packed/<name>`
 

@@ -19,7 +19,7 @@ export default function LandingPage() {
           its dependencies for you.
         </p>
         <pre className="overflow-x-auto rounded-md bg-surface-sunken p-4 font-mono text-sm text-strong">
-          bunx shadcn@latest add https://ui.trypacked.com/r/button.json
+          bunx shadcn@latest add https://ui.trypacked.dev/r/button.json
         </pre>
       </section>
 

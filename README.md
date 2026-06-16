@@ -2,12 +2,12 @@
 
 The Packed design system as a standalone [shadcn](https://ui.shadcn.com)
 registry — warm, sunset-led React components (cream + orange, Lora / Figtree /
-DM Mono). Docs and previews: **[ui.trypacked.com](https://ui.trypacked.com/)**.
+DM Mono). Docs and previews: **[ui.trypacked.dev](https://ui.trypacked.dev/)**.
 
 ## Use a component
 
 ```bash
-bunx shadcn@latest add https://ui.trypacked.com/r/button.json
+bunx shadcn@latest add https://ui.trypacked.dev/r/button.json
 ```
 
 Components land in `components/ui/` and resolve their dependencies (including
