@@ -1,0 +1,38 @@
+import Link from "next/link";
+
+export default function DocsLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <div className="mx-auto flex w-full max-w-3xl flex-1 flex-col px-6 py-12">
+      <header className="mb-16 flex items-center justify-between border-border-subtle border-b pb-5">
+        <Link
+          href="/"
+          className="font-serif font-semibold text-lg text-strong tracking-tight"
+        >
+          packed<span className="text-brand">.ui</span>
+        </Link>
+        <nav className="flex items-center gap-5 text-muted-foreground text-sm">
+          <a
+            href="/storybook/index.html"
+            className="transition-colors hover:text-strong"
+          >
+            storybook
+          </a>
+          <a
+            href="/registry.json"
+            className="transition-colors hover:text-strong"
+          >
+            registry.json
+          </a>
+        </nav>
+      </header>
+      <main className="flex-1">{children}</main>
+      <footer className="mt-20 border-border-subtle border-t pt-6 text-muted-foreground text-xs">
+        Packed design system. Warm, sunset-led. Compose, don't fork.
+      </footer>
+    </div>
+  );
+}
