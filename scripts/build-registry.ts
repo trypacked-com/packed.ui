@@ -1,6 +1,8 @@
 import { mkdir, readFile, rm, writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
 
+import { cssToRegistryObject } from "./css-to-registry-object";
+
 type RegistryFile = {
   path: string;
   type: string;
@@ -15,6 +17,8 @@ type RegistryItem = {
   dependencies?: string[];
   registryDependencies?: string[];
   files?: RegistryFile[];
+  css?: Record<string, unknown>;
+  cssVars?: Record<string, Record<string, string>>;
 };
 
 type RegistryManifest = {
@@ -27,9 +31,16 @@ type RegistryManifest = {
 const root = process.cwd();
 const manifestPath = resolve(root, "registry.json");
 const outputRoot = resolve(root, "public", "r");
+const themeCssPath = resolve(root, "registry/styles/packed-theme.css");
+const themeVarsPath = resolve(root, "registry/styles/packed-theme-vars.json");
 
 const manifestRaw = await readFile(manifestPath, "utf8");
 const manifest = JSON.parse(manifestRaw) as RegistryManifest;
+
+const themeRegistryCss = cssToRegistryObject(await readFile(themeCssPath, "utf8"));
+const themeCssVars = JSON.parse(
+  await readFile(themeVarsPath, "utf8"),
+) as RegistryItem["cssVars"];
 
 await rm(outputRoot, { recursive: true, force: true });
 await mkdir(outputRoot, { recursive: true });
@@ -52,6 +63,11 @@ for (const item of manifest.items) {
     ...item,
     files,
   };
+
+  if (item.name === "theme") {
+    payload.css = themeRegistryCss;
+    payload.cssVars = themeCssVars;
+  }
 
   const itemPath = resolve(outputRoot, `${item.name}.json`);
   await writeFile(itemPath, `${JSON.stringify(payload, null, 2)}\n`, "utf8");

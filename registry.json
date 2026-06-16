@@ -13,7 +13,7 @@
         "@radix-ui/react-slot"
       ],
       "registryDependencies": [
-        "https://ui.trypacked.com/r/utils.json"
+        "@packed/utils"
       ],
       "files": [
         {
@@ -29,7 +29,7 @@
       "title": "Card",
       "description": "White surface container with a hairline border, rounded corners and a soft warm shadow.",
       "registryDependencies": [
-        "https://ui.trypacked.com/r/utils.json"
+        "@packed/utils"
       ],
       "files": [
         {
@@ -45,13 +45,42 @@
       "title": "Input",
       "description": "Text field on a sunken sand surface; focus turns the border brand orange with a warm ring.",
       "registryDependencies": [
-        "https://ui.trypacked.com/r/utils.json"
+        "@packed/utils"
       ],
       "files": [
         {
           "path": "registry/ui/input.tsx",
           "type": "registry:ui",
           "target": "components/ui/input.tsx"
+        }
+      ]
+    },
+    {
+      "name": "theme",
+      "type": "registry:theme",
+      "title": "Theme",
+      "description": "Packed warm-sand + sunset-orange tokens, Tailwind theme mapping, base styles, and Lora / Figtree / DM Mono via @fontsource in CSS.",
+      "dependencies": [
+        "@fontsource-variable/figtree",
+        "@fontsource/lora",
+        "@fontsource/dm-mono"
+      ],
+      "registryDependencies": [],
+      "files": []
+    },
+    {
+      "name": "theme-provider",
+      "type": "registry:lib",
+      "title": "Theme Provider",
+      "description": "Light/dark switching for Packed tokens. Toggles .dark on the html element and persists to localStorage. Add themeInitScript to your root layout to avoid a flash.",
+      "registryDependencies": [
+        "@packed/theme"
+      ],
+      "files": [
+        {
+          "path": "registry/lib/theme-provider.tsx",
+          "type": "registry:lib",
+          "target": "lib/theme-provider.tsx"
         }
       ]
     },

@@ -17,5 +17,8 @@
     "ui": "@/registry/ui",
     "lib": "@/registry/lib",
     "hooks": "@/registry/hooks"
+  },
+  "registries": {
+    "@packed": "https://ui.trypacked.com/r/{name}.json"
   }
 }

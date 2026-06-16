@@ -1,5 +1,7 @@
 import Link from "next/link";
 
+import { ThemeToggle } from "./components/theme-toggle";
+
 export default function DocsLayout({
   children,
 }: {
@@ -15,6 +17,7 @@ export default function DocsLayout({
           packed<span className="text-brand">.ui</span>
         </Link>
         <nav className="flex items-center gap-5 text-muted-foreground text-sm">
+          <ThemeToggle />
           <a
             href="/storybook/index.html"
             className="transition-colors hover:text-strong"
