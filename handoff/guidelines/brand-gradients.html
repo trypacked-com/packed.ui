@@ -1,0 +1,29 @@
+<!-- @dsCard group="Brand" viewport="760x260" name="Gradients & scrims" subtitle="Signature sunset gradients (135°) + photo scrims. Tokens in tokens/brand.css." -->
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; padding: 20px; background: var(--surface-card); font-family: var(--font-sans); }
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .cell { display: flex; flex-direction: column; gap: 7px; }
+  .box { height: 84px; border-radius: var(--radius-lg); box-shadow: var(--shadow-xs); position: relative; overflow: hidden; }
+  .photo { background: linear-gradient(135deg,#7a90a8,#3a4a5e); }
+  .photo .scrim { position: absolute; inset: 0; }
+  .photo .lab { position: absolute; left: 12px; bottom: 10px; color: #fff; font-weight: 700; font-size: 13px; text-shadow: var(--on-grad-shadow); }
+  .n { font-size: 12px; font-weight: 700; color: var(--text-strong); }
+  .t { font-size: 11px; color: var(--text-muted); font-family: var(--font-mono); }
+</style>
+</head>
+<body>
+  <div class="grid">
+    <div class="cell"><div class="box" style="background:var(--grad-sunset)"></div><span class="n">Sunset</span><span class="t">--grad-sunset</span></div>
+    <div class="cell"><div class="box" style="background:var(--grad-cta)"></div><span class="n">CTA</span><span class="t">--grad-cta</span></div>
+    <div class="cell"><div class="box" style="background:var(--grad-ember)"></div><span class="n">Ember</span><span class="t">--grad-ember</span></div>
+    <div class="cell"><div class="box" style="background:var(--grad-journey)"></div><span class="n">Journey (sparing)</span><span class="t">--grad-journey</span></div>
+    <div class="cell"><div class="box photo"><div class="scrim" style="background:var(--scrim-bottom)"></div><span class="lab">Scrim · white text</span></div><span class="n">Photo scrim</span><span class="t">--scrim-bottom</span></div>
+    <div class="cell"><div class="box photo"><div class="scrim" style="background:var(--wash-brand)"></div><span class="lab">Brand wash</span></div><span class="n">Brand wash on photo</span><span class="t">--wash-brand</span></div>
+  </div>
+</body>
+</html>

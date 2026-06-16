@@ -1,0 +1,36 @@
+<!-- @dsCard group="Colors" viewport="700x190" name="Status — Flight States" subtitle="On-time, delayed & cancelled. The vocabulary of the journey feed." -->
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; padding: 20px; background: var(--surface-card); font-family: var(--font-sans); }
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .pill { display: inline-flex; align-items: center; gap: 7px; padding: 6px 12px; border-radius: var(--radius-pill); font-size: 13px; font-weight: 600; width: fit-content; }
+  .dot { width: 8px; height: 8px; border-radius: 50%; }
+  .card { display: flex; flex-direction: column; gap: 10px; padding: 14px; border-radius: var(--radius-md); border: 1px solid var(--border-subtle); }
+  .meta { font-size: 11px; color: var(--text-muted); font-family: var(--font-mono); }
+  .lbl { font-size: 12px; font-weight: 700; color: var(--text-strong); }
+</style>
+</head>
+<body>
+  <div class="grid">
+    <div class="card">
+      <span class="lbl">On time</span>
+      <span class="pill" style="background:var(--status-ontime-bg); color:var(--status-ontime-fg)"><span class="dot" style="background:var(--green-500)"></span>On time</span>
+      <span class="meta">green-500 #2F9E66</span>
+    </div>
+    <div class="card">
+      <span class="lbl">Delayed</span>
+      <span class="pill" style="background:var(--status-delay-bg); color:var(--status-delay-fg)"><span class="dot" style="background:var(--amber-500)"></span>Delayed 40m</span>
+      <span class="meta">amber-500 #E8A317</span>
+    </div>
+    <div class="card">
+      <span class="lbl">Cancelled</span>
+      <span class="pill" style="background:var(--status-cancel-bg); color:var(--status-cancel-fg)"><span class="dot" style="background:var(--red-500)"></span>Cancelled</span>
+      <span class="meta">red-500 #E03E3E</span>
+    </div>
+  </div>
+</body>
+</html>

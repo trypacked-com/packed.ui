@@ -1,0 +1,32 @@
+<!-- @dsCard group="Brand" viewport="700x200" name="Logo & Wordmark" subtitle="Suitcase mark + Lora wordmark. The latch reads as luggage hardware." -->
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; padding: 24px; background: var(--surface-card); font-family: var(--font-sans); }
+  .row { display: flex; gap: 40px; align-items: center; flex-wrap: wrap; }
+  .lockup { display: flex; align-items: center; gap: 12px; }
+  .word { font-family: var(--font-serif); font-weight: 600; font-size: 32px; color: var(--text-strong); letter-spacing: -0.02em; }
+  .cap { font-size: 11px; color: var(--text-muted); margin-top: 10px; font-family: var(--font-mono); }
+  .col { display: flex; flex-direction: column; align-items: center; }
+</style>
+</head>
+<body>
+  <div class="row">
+    <div class="col">
+      <div class="lockup"><img src="../assets/packed-mark.svg" width="44" height="44" alt=""><span class="word">Packed</span></div>
+      <span class="cap">Primary lockup</span>
+    </div>
+    <div class="col">
+      <img src="../assets/packed-tile.svg" width="64" height="64" alt="">
+      <span class="cap">App icon</span>
+    </div>
+    <div class="col">
+      <img src="../assets/packed-mark.svg" width="56" height="56" alt="">
+      <span class="cap">Mark only</span>
+    </div>
+  </div>
+</body>
+</html>

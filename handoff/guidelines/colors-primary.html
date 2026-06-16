@@ -1,0 +1,32 @@
+<!-- @dsCard group="Colors" viewport="700x150" name="Primary — Sunset Orange" subtitle="Brand anchor. 500 is primary; 600/700 for hover & press." -->
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; padding: 20px; background: var(--surface-card); font-family: var(--font-sans); }
+  .row { display: flex; gap: 10px; }
+  .sw { flex: 1; display: flex; flex-direction: column; gap: 6px; }
+  .chip { height: 64px; border-radius: var(--radius-md); box-shadow: var(--shadow-xs); }
+  .n { font-size: 12px; font-weight: 700; color: var(--text-strong); }
+  .h { font-size: 11px; color: var(--text-muted); font-family: var(--font-mono); }
+  .star { position: absolute; top: 6px; right: 8px; color: #fff; font-size: 13px; }
+  .wrap { position: relative; }
+</style>
+</head>
+<body>
+  <div class="row">
+    <div class="sw"><div class="chip" style="background:var(--orange-50)"></div><span class="n">50</span><span class="h">#FFF3ED</span></div>
+    <div class="sw"><div class="chip" style="background:var(--orange-100)"></div><span class="n">100</span><span class="h">#FFE2D1</span></div>
+    <div class="sw"><div class="chip" style="background:var(--orange-200)"></div><span class="n">200</span><span class="h">#FFC3A3</span></div>
+    <div class="sw"><div class="chip" style="background:var(--orange-300)"></div><span class="n">300</span><span class="h">#FF9F6E</span></div>
+    <div class="sw"><div class="chip" style="background:var(--orange-400)"></div><span class="n">400</span><span class="h">#FF8147</span></div>
+    <div class="sw"><div class="wrap"><div class="chip" style="background:var(--orange-500)"></div><span class="star">★</span></div><span class="n">500</span><span class="h">#FF6B2C</span></div>
+    <div class="sw"><div class="chip" style="background:var(--orange-600)"></div><span class="n">600</span><span class="h">#ED5418</span></div>
+    <div class="sw"><div class="chip" style="background:var(--orange-700)"></div><span class="n">700</span><span class="h">#C4400F</span></div>
+    <div class="sw"><div class="chip" style="background:var(--orange-800)"></div><span class="n">800</span><span class="h">#9C3410</span></div>
+    <div class="sw"><div class="chip" style="background:var(--orange-900)"></div><span class="n">900</span><span class="h">#7E2D11</span></div>
+  </div>
+</body>
+</html>

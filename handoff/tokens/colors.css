@@ -1,0 +1,114 @@
+/* ============================================================
+   PACKED — COLOR TOKENS
+   Warm, sunset-led palette. Orange anchors the brand; warm
+   sand neutrals keep surfaces cosy; a calm sky blue carries
+   the "weather & sky" features.
+   ============================================================ */
+
+:root {
+  /* --- Primary: Sunset Orange ------------------------------ */
+  --orange-50:  #FFF3ED;
+  --orange-100: #FFE2D1;
+  --orange-200: #FFC3A3;
+  --orange-300: #FF9F6E;
+  --orange-400: #FF8147;
+  --orange-500: #FF6B2C; /* brand primary */
+  --orange-600: #ED5418;
+  --orange-700: #C4400F;
+  --orange-800: #9C3410;
+  --orange-900: #7E2D11;
+
+  /* --- Sky: weather & flight-status accent ----------------- */
+  --sky-50:  #ECF6FD;
+  --sky-100: #D2EAFA;
+  --sky-200: #A6D3F3;
+  --sky-300: #6FB7E9;
+  --sky-400: #3F9BDB;
+  --sky-500: #2B8CD9;
+  --sky-600: #1E72B8;
+  --sky-700: #195C93;
+  --sky-800: #184B76;
+  --sky-900: #163E60;
+
+  /* --- Warm neutrals: Sand --------------------------------- */
+  --sand-0:   #FFFFFF;
+  --sand-50:  #FBF7F2; /* default app surface (cream) */
+  --sand-100: #F5EEE6;
+  --sand-200: #EAE0D4;
+  --sand-300: #D9CCBC;
+  --sand-400: #B8A894;
+  --sand-500: #938573;
+  --sand-600: #6F6456;
+  --sand-700: #524A3F;
+  --sand-800: #38322B;
+  --sand-900: #221F1A; /* warm near-black */
+
+  /* --- Semantic hues --------------------------------------- */
+  --green-50:  #E8F6EE;
+  --green-100: #C7E9D5;
+  --green-500: #2F9E66; /* on-time / success */
+  --green-600: #25804F;
+  --green-700: #1D6640;
+
+  --amber-50:  #FEF6E7;
+  --amber-100: #FBE7BD;
+  --amber-500: #E8A317; /* delay / warning */
+  --amber-600: #C5860B;
+  --amber-700: #9C6A09;
+
+  --red-50:  #FDECEC;
+  --red-100: #F8CFCF;
+  --red-500: #E03E3E; /* cancelled / error */
+  --red-600: #C22C2C;
+  --red-700: #9C2424;
+
+  /* ==========================================================
+     SEMANTIC ALIASES — reference these in product code
+     ========================================================== */
+
+  /* Brand */
+  --brand:            var(--orange-500);
+  --brand-hover:      var(--orange-600);
+  --brand-press:      var(--orange-700);
+  --brand-subtle:     var(--orange-50);
+  --brand-subtle-2:   var(--orange-100);
+  --on-brand:         #FFFFFF;
+
+  --accent:           var(--sky-500);
+  --accent-hover:     var(--sky-600);
+  --accent-subtle:    var(--sky-50);
+  --on-accent:        #FFFFFF;
+
+  /* Surfaces & backgrounds */
+  --bg-app:           var(--sand-50);   /* cream page background */
+  --surface-card:     var(--sand-0);    /* white cards float on cream */
+  --surface-sunken:   var(--sand-100);  /* wells, inputs at rest */
+  --surface-raised:   var(--sand-0);
+  --surface-inverse:  var(--sand-900);
+
+  /* Text */
+  --text-strong:      var(--sand-900);
+  --text-body:        var(--sand-800);
+  --text-muted:       var(--sand-600);
+  --text-subtle:      var(--sand-500);
+  --text-on-inverse:  var(--sand-50);
+  --text-brand:       var(--orange-700);
+  --text-link:        var(--orange-700);
+
+  /* Borders & dividers */
+  --border-subtle:    var(--sand-200);
+  --border-default:   var(--sand-300);
+  --border-strong:    var(--sand-400);
+  --border-brand:     var(--orange-300);
+  --ring-focus:       color-mix(in srgb, var(--orange-500) 45%, transparent);
+
+  /* Status */
+  --status-ontime-fg:   var(--green-700);
+  --status-ontime-bg:   var(--green-50);
+  --status-delay-fg:    var(--amber-700);
+  --status-delay-bg:    var(--amber-50);
+  --status-cancel-fg:   var(--red-700);
+  --status-cancel-bg:   var(--red-50);
+  --status-info-fg:     var(--sky-700);
+  --status-info-bg:     var(--sky-50);
+}
