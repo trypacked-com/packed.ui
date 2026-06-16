@@ -1,6 +1,6 @@
-import type { StorybookConfig } from "@storybook/react-vite";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
+import type { StorybookConfig } from "@storybook/react-vite";
 
 const rootDir = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 
@@ -16,7 +16,9 @@ const config: StorybookConfig = {
   },
   viteFinal: async (viteConfig) => {
     const existingAlias = viteConfig.resolve?.alias;
-    const aliasObject = Array.isArray(existingAlias) ? {} : existingAlias ?? {};
+    const aliasObject = Array.isArray(existingAlias)
+      ? {}
+      : (existingAlias ?? {});
 
     return {
       ...viteConfig,
