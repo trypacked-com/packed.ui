@@ -39,3 +39,14 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# generated registry + storybook output
+/public/r/
+/public/storybook/
+/public/registry.json
+storybook-static/
+*storybook.log
+
+# playwright
+/playwright-report/
+/test-results/
