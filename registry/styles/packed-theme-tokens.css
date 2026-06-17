@@ -122,6 +122,14 @@
   --dur-base: 200ms;
   --dur-slow: 320ms;
 
+  --logo-mark: var(--brand);
+  --logo-mark-stroke: var(--brand);
+  --logo-mark-band: var(--brand-press);
+  --logo-mark-band-opacity: 0.32;
+  --logo-mark-latch: var(--brand-subtle);
+  --logo-min: 24px;
+  --logo-default: 30px;
+
   color-scheme: light;
 }
 
@@ -167,6 +175,12 @@
   --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.45);
   --shadow-lg: 0 12px 28px rgba(0, 0, 0, 0.55);
   --shadow-xl: 0 24px 56px rgba(0, 0, 0, 0.6);
+
+  --logo-mark: var(--sand-0);
+  --logo-mark-stroke: var(--sand-0);
+  --logo-mark-band: var(--brand);
+  --logo-mark-band-opacity: 0.55;
+  --logo-mark-latch: var(--brand);
 
   color-scheme: dark;
 }

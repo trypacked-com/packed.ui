@@ -517,6 +517,22 @@
       ]
     },
     {
+      "name": "logo",
+      "type": "registry:ui",
+      "title": "Logo",
+      "description": "The Packed suitcase mark — brand fill on light surfaces, inverse on dark or photography.",
+      "registryDependencies": [
+        "@packed/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/logo.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/logo.tsx"
+        }
+      ]
+    },
+    {
       "name": "menubar",
       "type": "registry:ui",
       "title": "Menubar",
