@@ -1,0 +1,15 @@
+{
+  "name": "spinner",
+  "type": "registry:ui",
+  "title": "Spinner",
+  "description": "Packed Spinner — warm, token-driven UI on sand surfaces.",
+  "dependencies": ["lucide-react"],
+  "registryDependencies": ["@packed/utils"],
+  "files": [
+    {
+      "path": "registry/ui/spinner.tsx",
+      "type": "registry:ui",
+      "target": "components/ui/spinner.tsx"
+    }
+  ]
+}

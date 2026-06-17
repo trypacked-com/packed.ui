@@ -1,0 +1,15 @@
+{
+  "name": "kbd",
+  "type": "registry:ui",
+  "title": "Kbd",
+  "description": "Packed Kbd — warm, token-driven UI on sand surfaces.",
+  "dependencies": [],
+  "registryDependencies": ["@packed/utils"],
+  "files": [
+    {
+      "path": "registry/ui/kbd.tsx",
+      "type": "registry:ui",
+      "target": "components/ui/kbd.tsx"
+    }
+  ]
+}

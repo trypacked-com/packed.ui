@@ -21,7 +21,10 @@ test("all stories match baselines", async ({ page, request }) => {
     .map((entry) => entry.id);
 
   for (const storyId of storyIds) {
-    await page.goto(`/iframe.html?id=${storyId}`, { waitUntil: "networkidle" });
+    await page.goto(`/iframe.html?id=${storyId}`, {
+      waitUntil: "domcontentloaded",
+    });
+    await page.waitForTimeout(300);
     await expect(page).toHaveScreenshot(`${storyId}.png`, {
       fullPage: true,
     });

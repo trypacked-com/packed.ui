@@ -1,0 +1,19 @@
+{
+  "name": "field",
+  "type": "registry:ui",
+  "title": "Field",
+  "description": "Packed Field — warm, token-driven UI on sand surfaces.",
+  "dependencies": ["class-variance-authority"],
+  "registryDependencies": [
+    "@packed/label",
+    "@packed/separator",
+    "@packed/utils"
+  ],
+  "files": [
+    {
+      "path": "registry/ui/field.tsx",
+      "type": "registry:ui",
+      "target": "components/ui/field.tsx"
+    }
+  ]
+}

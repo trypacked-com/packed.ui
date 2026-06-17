@@ -1,0 +1,15 @@
+{
+  "name": "toggle-group",
+  "type": "registry:ui",
+  "title": "Toggle Group",
+  "description": "Packed Toggle Group — warm, token-driven UI on sand surfaces.",
+  "dependencies": ["radix-ui"],
+  "registryDependencies": ["@packed/toggle", "@packed/utils"],
+  "files": [
+    {
+      "path": "registry/ui/toggle-group.tsx",
+      "type": "registry:ui",
+      "target": "components/ui/toggle-group.tsx"
+    }
+  ]
+}

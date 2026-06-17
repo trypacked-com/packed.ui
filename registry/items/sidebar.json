@@ -1,0 +1,23 @@
+{
+  "name": "sidebar",
+  "type": "registry:ui",
+  "title": "Sidebar",
+  "description": "Packed Sidebar — warm, token-driven UI on sand surfaces.",
+  "dependencies": ["class-variance-authority", "lucide-react", "radix-ui"],
+  "registryDependencies": [
+    "@packed/button",
+    "@packed/input",
+    "@packed/separator",
+    "@packed/sheet",
+    "@packed/skeleton",
+    "@packed/tooltip",
+    "@packed/utils"
+  ],
+  "files": [
+    {
+      "path": "registry/ui/sidebar.tsx",
+      "type": "registry:ui",
+      "target": "components/ui/sidebar.tsx"
+    }
+  ]
+}

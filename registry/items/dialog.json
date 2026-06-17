@@ -1,0 +1,15 @@
+{
+  "name": "dialog",
+  "type": "registry:ui",
+  "title": "Dialog",
+  "description": "Packed Dialog — warm, token-driven UI on sand surfaces.",
+  "dependencies": ["lucide-react", "radix-ui"],
+  "registryDependencies": ["@packed/button", "@packed/utils"],
+  "files": [
+    {
+      "path": "registry/ui/dialog.tsx",
+      "type": "registry:ui",
+      "target": "components/ui/dialog.tsx"
+    }
+  ]
+}

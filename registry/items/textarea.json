@@ -1,0 +1,15 @@
+{
+  "name": "textarea",
+  "type": "registry:ui",
+  "title": "Textarea",
+  "description": "Packed Textarea — warm, token-driven UI on sand surfaces.",
+  "dependencies": [],
+  "registryDependencies": ["@packed/utils"],
+  "files": [
+    {
+      "path": "registry/ui/textarea.tsx",
+      "type": "registry:ui",
+      "target": "components/ui/textarea.tsx"
+    }
+  ]
+}

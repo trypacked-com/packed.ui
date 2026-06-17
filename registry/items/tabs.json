@@ -1,0 +1,15 @@
+{
+  "name": "tabs",
+  "type": "registry:ui",
+  "title": "Tabs",
+  "description": "Underline tab bar with optional icons and counts. Controlled via `value` + `onChange`.",
+  "dependencies": ["class-variance-authority", "radix-ui"],
+  "registryDependencies": ["@packed/utils"],
+  "files": [
+    {
+      "path": "registry/ui/tabs.tsx",
+      "type": "registry:ui",
+      "target": "components/ui/tabs.tsx"
+    }
+  ]
+}

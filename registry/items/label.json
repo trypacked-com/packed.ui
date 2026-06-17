@@ -1,0 +1,15 @@
+{
+  "name": "label",
+  "type": "registry:ui",
+  "title": "Label",
+  "description": "Packed Label — warm, token-driven UI on sand surfaces.",
+  "dependencies": ["radix-ui"],
+  "registryDependencies": ["@packed/utils"],
+  "files": [
+    {
+      "path": "registry/ui/label.tsx",
+      "type": "registry:ui",
+      "target": "components/ui/label.tsx"
+    }
+  ]
+}

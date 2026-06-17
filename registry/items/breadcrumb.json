@@ -1,0 +1,15 @@
+{
+  "name": "breadcrumb",
+  "type": "registry:ui",
+  "title": "Breadcrumb",
+  "description": "Packed Breadcrumb — warm, token-driven UI on sand surfaces.",
+  "dependencies": ["lucide-react", "radix-ui"],
+  "registryDependencies": ["@packed/utils"],
+  "files": [
+    {
+      "path": "registry/ui/breadcrumb.tsx",
+      "type": "registry:ui",
+      "target": "components/ui/breadcrumb.tsx"
+    }
+  ]
+}

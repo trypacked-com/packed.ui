@@ -1,0 +1,15 @@
+{
+  "name": "button-group",
+  "type": "registry:ui",
+  "title": "Button Group",
+  "description": "Packed Button Group — warm, token-driven UI on sand surfaces.",
+  "dependencies": ["class-variance-authority", "radix-ui"],
+  "registryDependencies": ["@packed/separator", "@packed/utils"],
+  "files": [
+    {
+      "path": "registry/ui/button-group.tsx",
+      "type": "registry:ui",
+      "target": "components/ui/button-group.tsx"
+    }
+  ]
+}

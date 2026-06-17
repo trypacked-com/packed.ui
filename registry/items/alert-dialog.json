@@ -1,0 +1,15 @@
+{
+  "name": "alert-dialog",
+  "type": "registry:ui",
+  "title": "Alert Dialog",
+  "description": "Packed Alert Dialog — warm, token-driven UI on sand surfaces.",
+  "dependencies": ["radix-ui"],
+  "registryDependencies": ["@packed/button", "@packed/utils"],
+  "files": [
+    {
+      "path": "registry/ui/alert-dialog.tsx",
+      "type": "registry:ui",
+      "target": "components/ui/alert-dialog.tsx"
+    }
+  ]
+}

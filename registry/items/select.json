@@ -1,0 +1,15 @@
+{
+  "name": "select",
+  "type": "registry:ui",
+  "title": "Select",
+  "description": "Native select styled to match Input, with a custom chevron.",
+  "dependencies": ["lucide-react", "radix-ui"],
+  "registryDependencies": ["@packed/utils"],
+  "files": [
+    {
+      "path": "registry/ui/select.tsx",
+      "type": "registry:ui",
+      "target": "components/ui/select.tsx"
+    }
+  ]
+}

@@ -1,12 +1,22 @@
 import { Input } from "@/registry/ui/input";
+import { Label } from "@/registry/ui/label";
 
-export function InputDemo() {
+export default function InputDemo() {
   return (
-    <div className="grid max-w-xs gap-2">
-      <label className="font-medium text-sm text-strong" htmlFor="demo-email">
-        Email
-      </label>
-      <Input id="demo-email" placeholder="you@example.com" />
+    <div className="grid w-full max-w-xs gap-4">
+      <div className="grid gap-2">
+        <Label htmlFor="destination">Destination</Label>
+        <Input id="destination" placeholder="Where to?" />
+      </div>
+      <div className="grid gap-2">
+        <Label htmlFor="flight-code">Flight code</Label>
+        <Input
+          id="flight-code"
+          className="font-mono"
+          placeholder="TP1234"
+          defaultValue="TP1234"
+        />
+      </div>
     </div>
   );
 }

@@ -1,0 +1,15 @@
+{
+  "name": "alert",
+  "type": "registry:ui",
+  "title": "Alert",
+  "description": "Packed Alert — warm, token-driven UI on sand surfaces.",
+  "dependencies": ["class-variance-authority"],
+  "registryDependencies": ["@packed/utils"],
+  "files": [
+    {
+      "path": "registry/ui/alert.tsx",
+      "type": "registry:ui",
+      "target": "components/ui/alert.tsx"
+    }
+  ]
+}

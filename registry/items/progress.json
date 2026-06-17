@@ -1,0 +1,15 @@
+{
+  "name": "progress",
+  "type": "registry:ui",
+  "title": "Progress",
+  "description": "Packed Progress — warm, token-driven UI on sand surfaces.",
+  "dependencies": ["radix-ui"],
+  "registryDependencies": ["@packed/utils"],
+  "files": [
+    {
+      "path": "registry/ui/progress.tsx",
+      "type": "registry:ui",
+      "target": "components/ui/progress.tsx"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "name": "toggle",
+  "type": "registry:ui",
+  "title": "Toggle",
+  "description": "Packed Toggle — warm, token-driven UI on sand surfaces.",
+  "dependencies": ["class-variance-authority", "radix-ui"],
+  "registryDependencies": ["@packed/utils"],
+  "files": [
+    {
+      "path": "registry/ui/toggle.tsx",
+      "type": "registry:ui",
+      "target": "components/ui/toggle.tsx"
+    }
+  ]
+}

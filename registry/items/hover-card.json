@@ -1,0 +1,15 @@
+{
+  "name": "hover-card",
+  "type": "registry:ui",
+  "title": "Hover Card",
+  "description": "Packed Hover Card — warm, token-driven UI on sand surfaces.",
+  "dependencies": ["radix-ui"],
+  "registryDependencies": ["@packed/utils"],
+  "files": [
+    {
+      "path": "registry/ui/hover-card.tsx",
+      "type": "registry:ui",
+      "target": "components/ui/hover-card.tsx"
+    }
+  ]
+}

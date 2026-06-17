@@ -211,6 +211,28 @@
   --color-border-subtle: var(--border-subtle);
   --color-border-strong: var(--border-strong);
   --color-border-brand: var(--border-brand);
+  --color-surface-inverse: var(--surface-inverse);
+  --color-on-inverse: var(--text-on-inverse);
+
+  /* Status fg/bg pairs */
+  --color-status-ontime-fg: var(--status-ontime-fg);
+  --color-status-ontime-bg: var(--status-ontime-bg);
+  --color-status-delay-fg: var(--status-delay-fg);
+  --color-status-delay-bg: var(--status-delay-bg);
+  --color-status-cancel-fg: var(--status-cancel-fg);
+  --color-status-cancel-bg: var(--status-cancel-bg);
+  --color-status-info-fg: var(--status-info-fg);
+  --color-status-info-bg: var(--status-info-bg);
+
+  /* shadcn sidebar aliases → Packed tokens */
+  --color-sidebar: var(--surface-card);
+  --color-sidebar-foreground: var(--text-body);
+  --color-sidebar-primary: var(--brand);
+  --color-sidebar-primary-foreground: var(--on-brand);
+  --color-sidebar-accent: var(--brand-subtle);
+  --color-sidebar-accent-foreground: var(--text-link);
+  --color-sidebar-border: var(--border-subtle);
+  --color-sidebar-ring: var(--ring-focus);
 
   --font-sans: var(--font-sans);
   --font-serif: var(--font-serif);
@@ -242,4 +264,8 @@
   --ease-out: var(--ease-out);
   --ease-in-out: var(--ease-in-out);
   --ease-soft: var(--ease-soft);
+
+  --duration-fast: var(--dur-fast);
+  --duration-base: var(--dur-base);
+  --duration-slow: var(--dur-slow);
 }

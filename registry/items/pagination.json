@@ -1,0 +1,15 @@
+{
+  "name": "pagination",
+  "type": "registry:ui",
+  "title": "Pagination",
+  "description": "Packed Pagination — warm, token-driven UI on sand surfaces.",
+  "dependencies": ["lucide-react"],
+  "registryDependencies": ["@packed/button", "@packed/utils"],
+  "files": [
+    {
+      "path": "registry/ui/pagination.tsx",
+      "type": "registry:ui",
+      "target": "components/ui/pagination.tsx"
+    }
+  ]
+}

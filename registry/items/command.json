@@ -1,0 +1,15 @@
+{
+  "name": "command",
+  "type": "registry:ui",
+  "title": "Command",
+  "description": "Packed Command — warm, token-driven UI on sand surfaces.",
+  "dependencies": ["cmdk", "lucide-react"],
+  "registryDependencies": ["@packed/dialog", "@packed/utils"],
+  "files": [
+    {
+      "path": "registry/ui/command.tsx",
+      "type": "registry:ui",
+      "target": "components/ui/command.tsx"
+    }
+  ]
+}

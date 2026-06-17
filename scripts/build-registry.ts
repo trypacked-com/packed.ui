@@ -37,7 +37,9 @@ const themeVarsPath = resolve(root, "registry/styles/packed-theme-vars.json");
 const manifestRaw = await readFile(manifestPath, "utf8");
 const manifest = JSON.parse(manifestRaw) as RegistryManifest;
 
-const themeRegistryCss = cssToRegistryObject(await readFile(themeCssPath, "utf8"));
+const themeRegistryCss = cssToRegistryObject(
+  await readFile(themeCssPath, "utf8"),
+);
 const themeCssVars = JSON.parse(
   await readFile(themeVarsPath, "utf8"),
 ) as RegistryItem["cssVars"];

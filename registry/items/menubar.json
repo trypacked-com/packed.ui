@@ -1,0 +1,15 @@
+{
+  "name": "menubar",
+  "type": "registry:ui",
+  "title": "Menubar",
+  "description": "Packed Menubar — warm, token-driven UI on sand surfaces.",
+  "dependencies": ["lucide-react", "radix-ui"],
+  "registryDependencies": ["@packed/utils"],
+  "files": [
+    {
+      "path": "registry/ui/menubar.tsx",
+      "type": "registry:ui",
+      "target": "components/ui/menubar.tsx"
+    }
+  ]
+}

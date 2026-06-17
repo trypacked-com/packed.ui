@@ -1,0 +1,15 @@
+{
+  "name": "badge",
+  "type": "registry:ui",
+  "title": "Badge",
+  "description": "Compact pill label for statuses, counts and categories. Use the semantic tones for flight states.",
+  "dependencies": ["class-variance-authority", "radix-ui"],
+  "registryDependencies": ["@packed/utils"],
+  "files": [
+    {
+      "path": "registry/ui/badge.tsx",
+      "type": "registry:ui",
+      "target": "components/ui/badge.tsx"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "name": "form",
+  "type": "registry:ui",
+  "title": "Form",
+  "description": "Packed Form — warm, token-driven UI on sand surfaces.",
+  "dependencies": ["radix-ui", "react-hook-form"],
+  "registryDependencies": ["@packed/label", "@packed/utils"],
+  "files": [
+    {
+      "path": "registry/ui/form.tsx",
+      "type": "registry:ui",
+      "target": "components/ui/form.tsx"
+    }
+  ]
+}

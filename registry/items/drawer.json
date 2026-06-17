@@ -1,0 +1,15 @@
+{
+  "name": "drawer",
+  "type": "registry:ui",
+  "title": "Drawer",
+  "description": "Packed Drawer — warm, token-driven UI on sand surfaces.",
+  "dependencies": ["vaul"],
+  "registryDependencies": ["@packed/utils"],
+  "files": [
+    {
+      "path": "registry/ui/drawer.tsx",
+      "type": "registry:ui",
+      "target": "components/ui/drawer.tsx"
+    }
+  ]
+}

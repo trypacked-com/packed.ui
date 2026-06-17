@@ -1,0 +1,15 @@
+{
+  "name": "slider",
+  "type": "registry:ui",
+  "title": "Slider",
+  "description": "Packed Slider — warm, token-driven UI on sand surfaces.",
+  "dependencies": ["radix-ui"],
+  "registryDependencies": ["@packed/utils"],
+  "files": [
+    {
+      "path": "registry/ui/slider.tsx",
+      "type": "registry:ui",
+      "target": "components/ui/slider.tsx"
+    }
+  ]
+}

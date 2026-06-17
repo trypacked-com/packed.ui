@@ -1,0 +1,15 @@
+{
+  "name": "sonner",
+  "type": "registry:ui",
+  "title": "Sonner",
+  "description": "Packed Sonner — warm, token-driven UI on sand surfaces.",
+  "dependencies": ["lucide-react", "sonner"],
+  "registryDependencies": ["@packed/utils"],
+  "files": [
+    {
+      "path": "registry/ui/sonner.tsx",
+      "type": "registry:ui",
+      "target": "components/ui/sonner.tsx"
+    }
+  ]
+}

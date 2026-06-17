@@ -1,0 +1,15 @@
+{
+  "name": "table",
+  "type": "registry:ui",
+  "title": "Table",
+  "description": "Packed Table — warm, token-driven UI on sand surfaces.",
+  "dependencies": [],
+  "registryDependencies": ["@packed/utils"],
+  "files": [
+    {
+      "path": "registry/ui/table.tsx",
+      "type": "registry:ui",
+      "target": "components/ui/table.tsx"
+    }
+  ]
+}
