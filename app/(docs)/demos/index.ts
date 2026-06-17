@@ -10,6 +10,7 @@ import ButtonGroupDemo from "./button-group";
 import CalendarDemo from "./calendar";
 import CardDemo from "./card";
 import CheckboxDemo from "./checkbox";
+import DatePickerDemo from "./date-picker";
 import CollapsibleDemo from "./collapsible";
 import CommandDemo from "./command";
 import DialogDemo from "./dialog";
@@ -60,6 +61,7 @@ export const demos: Record<string, ComponentType> = {
   calendar: CalendarDemo,
   card: CardDemo,
   checkbox: CheckboxDemo,
+  "date-picker": DatePickerDemo,
   collapsible: CollapsibleDemo,
   command: CommandDemo,
   dialog: DialogDemo,

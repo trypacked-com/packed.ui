@@ -88,13 +88,17 @@ function Calendar({
             : "flex h-8 items-center gap-1 rounded-md pr-1 pl-2 text-sm [&>svg]:size-3.5 [&>svg]:text-subtle",
           defaultClassNames.caption_label,
         ),
-        table: "w-full border-collapse",
-        weekdays: cn("flex", defaultClassNames.weekdays),
+        month_grid: cn(
+          "w-[calc(var(--cell-size)*7)] border-collapse table-fixed",
+          defaultClassNames.month_grid,
+        ),
+        weekdays: cn(defaultClassNames.weekdays),
         weekday: cn(
-          "flex-1 rounded-md text-[0.8rem] font-normal text-subtle select-none",
+          "size-(--cell-size) rounded-md text-[0.8rem] font-normal text-subtle select-none",
           defaultClassNames.weekday,
         ),
-        week: cn("mt-2 flex w-full", defaultClassNames.week),
+        week: cn(defaultClassNames.week),
+        weeks: cn("[&_tr:not(:first-child)_td]:pt-2", defaultClassNames.weeks),
         week_number_header: cn(
           "w-(--cell-size) select-none",
           defaultClassNames.week_number_header,
@@ -104,7 +108,7 @@ function Calendar({
           defaultClassNames.week_number,
         ),
         day: cn(
-          "group/day relative aspect-square h-full w-full p-0 text-center select-none [&:last-child[data-selected=true]_button]:rounded-r-md",
+          "group/day relative size-(--cell-size) p-0 text-center align-middle select-none [&:last-child[data-selected=true]_button]:rounded-r-md",
           props.showWeekNumber
             ? "[&:nth-child(2)[data-selected=true]_button]:rounded-l-md"
             : "[&:first-child[data-selected=true]_button]:rounded-l-md",
@@ -132,6 +136,10 @@ function Calendar({
         ),
         disabled: cn("text-muted-text opacity-50", defaultClassNames.disabled),
         hidden: cn("invisible", defaultClassNames.hidden),
+        day_button: cn(
+          "size-(--cell-size) p-0 font-normal aria-selected:opacity-100",
+          defaultClassNames.day_button,
+        ),
         ...classNames,
       }}
       components={{
@@ -188,8 +196,6 @@ function CalendarDayButton({
   modifiers,
   ...props
 }: React.ComponentProps<typeof DayButton>) {
-  const defaultClassNames = getDefaultClassNames();
-
   const ref = React.useRef<HTMLButtonElement>(null);
   React.useEffect(() => {
     if (modifiers.focused) ref.current?.focus();
@@ -211,8 +217,7 @@ function CalendarDayButton({
       data-range-end={modifiers.range_end}
       data-range-middle={modifiers.range_middle}
       className={cn(
-        "flex aspect-square size-auto w-full min-w-(--cell-size) flex-col gap-1 leading-none font-normal hover:bg-brand-subtle group-data-[focused=true]/day:relative group-data-[focused=true]/day:z-10 group-data-[focused=true]/day:border-brand group-data-[focused=true]/day:ring-[3px] group-data-[focused=true]/day:ring-ring data-[range-end=true]:rounded-md data-[range-end=true]:rounded-r-md data-[range-end=true]:bg-brand data-[range-end=true]:text-on-brand data-[range-middle=true]:rounded-none data-[range-middle=true]:bg-brand-subtle data-[range-middle=true]:text-strong data-[range-start=true]:rounded-md data-[range-start=true]:rounded-l-md data-[range-start=true]:bg-brand data-[range-start=true]:text-on-brand data-[selected-single=true]:bg-brand data-[selected-single=true]:text-on-brand [&>span]:text-xs [&>span]:opacity-70",
-        defaultClassNames.day,
+        "mx-auto size-(--cell-size) shrink p-0 leading-none font-normal hover:bg-brand-subtle group-data-[focused=true]/day:relative group-data-[focused=true]/day:z-10 group-data-[focused=true]/day:border-brand group-data-[focused=true]/day:ring-[3px] group-data-[focused=true]/day:ring-ring data-[range-end=true]:rounded-md data-[range-end=true]:rounded-r-md data-[range-end=true]:bg-brand data-[range-end=true]:text-on-brand data-[range-middle=true]:rounded-none data-[range-middle=true]:bg-brand-subtle data-[range-middle=true]:text-strong data-[range-start=true]:rounded-md data-[range-start=true]:rounded-l-md data-[range-start=true]:bg-brand data-[range-start=true]:text-on-brand data-[selected-single=true]:bg-brand data-[selected-single=true]:text-on-brand [&>span]:text-xs [&>span]:opacity-70",
         className,
       )}
       {...props}
