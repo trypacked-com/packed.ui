@@ -2,8 +2,8 @@
   "name": "alert",
   "type": "registry:ui",
   "title": "Alert",
-  "description": "Packed Alert — warm, token-driven UI on sand surfaces.",
-  "dependencies": ["class-variance-authority"],
+  "description": "Push-style journey alert — gate changes, forecasts, and status updates.",
+  "dependencies": ["class-variance-authority", "lucide-react"],
   "registryDependencies": ["@packed/utils"],
   "files": [
     {

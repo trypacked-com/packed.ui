@@ -27,9 +27,10 @@
       "name": "alert",
       "type": "registry:ui",
       "title": "Alert",
-      "description": "Packed Alert — warm, token-driven UI on sand surfaces.",
+      "description": "Push-style journey alert — gate changes, forecasts, and status updates.",
       "dependencies": [
-        "class-variance-authority"
+        "class-variance-authority",
+        "lucide-react"
       ],
       "registryDependencies": [
         "@packed/utils"
@@ -188,7 +189,9 @@
       "type": "registry:ui",
       "title": "Card",
       "description": "The warm surface container — Packed's workhorse layout primitive. White surface, soft border, generous radius.",
-      "dependencies": [],
+      "dependencies": [
+        "radix-ui"
+      ],
       "registryDependencies": [
         "@packed/utils"
       ],

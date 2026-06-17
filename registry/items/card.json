@@ -3,7 +3,7 @@
   "type": "registry:ui",
   "title": "Card",
   "description": "The warm surface container — Packed's workhorse layout primitive. White surface, soft border, generous radius.",
-  "dependencies": [],
+  "dependencies": ["radix-ui"],
   "registryDependencies": ["@packed/utils"],
   "files": [
     {
