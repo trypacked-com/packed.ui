@@ -56,19 +56,25 @@ function Logo({
     >
       <path
         d="M17.5 15 V12 A5 5 0 0 1 22.5 7 H25.5 A5 5 0 0 1 30.5 12 V15"
-        stroke={colors.stroke}
         strokeWidth={3.2}
         strokeLinecap="round"
         fill="none"
+        style={{ stroke: colors.stroke }}
       />
-      <rect x={7} y={15} width={34} height={26} rx={6.5} fill={colors.body} />
+      <rect
+        x={7}
+        y={15}
+        width={34}
+        height={26}
+        rx={6.5}
+        style={{ fill: colors.body }}
+      />
       <rect
         x={7}
         y={22.6}
         width={34}
         height={3.2}
-        fill={colors.band}
-        opacity={colors.bandOpacity}
+        style={{ fill: colors.band, opacity: colors.bandOpacity }}
       />
       <rect
         x={18.8}
@@ -76,7 +82,7 @@ function Logo({
         width={10.4}
         height={4.8}
         rx={2}
-        fill={colors.latch}
+        style={{ fill: colors.latch }}
       />
     </svg>
   );

@@ -1,14 +1,14 @@
-import Link from "next/link";
-
 import registry from "@/registry.json";
-import {
-  Card,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/registry/ui/card";
 
-const components = registry.items.filter((item) => item.type === "registry:ui");
+import { ComponentList } from "./components/component-list";
+
+const components = registry.items
+  .filter((item) => item.type === "registry:ui")
+  .map((item) => ({
+    name: item.name,
+    title: item.title,
+    description: item.description,
+  }));
 
 export default function LandingPage() {
   return (
@@ -33,27 +33,7 @@ export default function LandingPage() {
         <h2 className="font-serif font-semibold text-strong text-xl tracking-tight">
           Components
         </h2>
-        <ul className="grid gap-3 sm:grid-cols-2">
-          {components.map((item) => (
-            <li key={item.name}>
-              <Card interactive asChild>
-                <Link
-                  href={`/components/${item.name}/`}
-                  className="h-full no-underline"
-                >
-                  <CardHeader>
-                    <CardTitle className="font-serif text-base">
-                      {item.title ?? item.name}
-                    </CardTitle>
-                    {item.description ? (
-                      <CardDescription>{item.description}</CardDescription>
-                    ) : null}
-                  </CardHeader>
-                </Link>
-              </Card>
-            </li>
-          ))}
-        </ul>
+        <ComponentList items={components} />
       </section>
     </div>
   );
