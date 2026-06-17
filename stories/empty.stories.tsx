@@ -23,7 +23,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   render: () => (
-    <Empty className="max-w-sm border border-subtle">
+    <Empty className="max-w-sm border border-border-subtle">
       <EmptyHeader>
         <EmptyMedia variant="icon">
           <Plane />

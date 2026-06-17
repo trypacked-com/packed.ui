@@ -23,7 +23,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   render: () => (
-    <ScrollArea className="h-32 w-64 rounded-md border border-subtle">
+    <ScrollArea className="h-32 w-64 rounded-md border border-border-subtle">
       <div className="space-y-3 p-4">
         {flights.map((flight) => (
           <div

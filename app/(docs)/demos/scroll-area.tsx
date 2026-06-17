@@ -11,7 +11,7 @@ const flights = [
 
 export default function ScrollAreaDemo() {
   return (
-    <ScrollArea className="h-32 w-full max-w-xs rounded-md border border-subtle">
+    <ScrollArea className="h-32 w-full max-w-xs rounded-md border border-border-subtle">
       <div className="space-y-3 p-4">
         {flights.map((flight) => (
           <div

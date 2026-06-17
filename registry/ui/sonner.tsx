@@ -27,7 +27,7 @@ const Toaster = ({ ...props }: ToasterProps) => {
       toastOptions={{
         classNames: {
           toast:
-            "group toast bg-popover text-foreground border border-subtle rounded-lg shadow-lg font-sans",
+            "group toast bg-popover text-foreground border border-border-subtle rounded-lg shadow-lg font-sans",
           title: "text-strong font-semibold",
           description: "text-muted-text",
           actionButton:
@@ -35,7 +35,7 @@ const Toaster = ({ ...props }: ToasterProps) => {
           cancelButton:
             "bg-surface-sunken text-strong hover:bg-brand-subtle rounded-md transition-colors",
           closeButton:
-            "bg-popover text-subtle border-subtle hover:bg-brand-subtle hover:text-strong transition-colors",
+            "bg-popover text-subtle border-border-subtle hover:bg-brand-subtle hover:text-strong transition-colors",
           success:
             "[&_[data-icon]]:text-status-ontime-fg [&_[data-icon]]:bg-status-ontime-bg",
           warning:

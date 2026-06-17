@@ -114,6 +114,10 @@
   --shadow-xl: 0 24px 56px rgba(56, 50, 43, 0.14), 0 8px 18px rgba(56, 50, 43, 0.06);
   --shadow-brand: 0 8px 22px rgba(237, 84, 24, 0.28);
 
+  /* Elevation roles */
+  --elev-card: var(--shadow-sm);
+  --elev-card-hover: var(--shadow-md);
+
   /* Motion */
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
   --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
@@ -121,6 +125,14 @@
   --dur-fast: 120ms;
   --dur-base: 200ms;
   --dur-slow: 320ms;
+
+  --logo-mark: var(--brand);
+  --logo-mark-stroke: var(--brand);
+  --logo-mark-band: var(--brand-press);
+  --logo-mark-band-opacity: 0.32;
+  --logo-mark-latch: var(--brand-subtle);
+  --logo-min: 24px;
+  --logo-default: 30px;
 
   color-scheme: light;
 }
@@ -167,6 +179,15 @@
   --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.45);
   --shadow-lg: 0 12px 28px rgba(0, 0, 0, 0.55);
   --shadow-xl: 0 24px 56px rgba(0, 0, 0, 0.6);
+
+  --elev-card: var(--shadow-sm);
+  --elev-card-hover: var(--shadow-md);
+
+  --logo-mark: var(--sand-0);
+  --logo-mark-stroke: var(--sand-0);
+  --logo-mark-band: var(--brand);
+  --logo-mark-band-opacity: 0.55;
+  --logo-mark-latch: var(--brand);
 
   color-scheme: dark;
 }
@@ -253,6 +274,8 @@
   --shadow-lg: var(--shadow-lg);
   --shadow-xl: var(--shadow-xl);
   --shadow-brand: var(--shadow-brand);
+  --shadow-card: var(--elev-card);
+  --shadow-card-hover: var(--elev-card-hover);
 
   --text-2xs: 0.6875rem;
   --text-display: clamp(2.75rem, 6vw, 4.5rem);

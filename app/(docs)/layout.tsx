@@ -1,5 +1,7 @@
 import Link from "next/link";
 
+import { Logo } from "@/registry/ui/logo";
+
 import { ThemeToggle } from "./components/theme-toggle";
 
 export default function DocsLayout({
@@ -12,9 +14,10 @@ export default function DocsLayout({
       <header className="mb-16 flex items-center justify-between border-border-subtle border-b pb-5">
         <Link
           href="/"
-          className="font-serif font-semibold text-lg text-strong tracking-tight"
+          className="flex items-center gap-2 font-serif font-semibold text-lg text-strong leading-none tracking-tight"
         >
-          packed<span className="text-brand">.ui</span>
+          <Logo size="sm" />
+          <span>Packed<span className="text-brand">.ui</span></span>
         </Link>
         <nav className="flex items-center gap-5 text-muted-foreground text-sm">
           <ThemeToggle />

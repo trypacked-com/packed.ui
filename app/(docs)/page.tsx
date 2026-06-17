@@ -1,6 +1,12 @@
 import Link from "next/link";
 
 import registry from "@/registry.json";
+import {
+  Card,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/registry/ui/card";
 
 const components = registry.items.filter((item) => item.type === "registry:ui");
 
@@ -30,19 +36,21 @@ export default function LandingPage() {
         <ul className="grid gap-3 sm:grid-cols-2">
           {components.map((item) => (
             <li key={item.name}>
-              <Link
-                href={`/components/${item.name}/`}
-                className="group flex h-full flex-col gap-2 rounded-lg border border-border-subtle bg-card p-5 shadow-sm transition-all duration-[var(--dur-fast)] ease-[var(--ease-out)] hover:-translate-y-px hover:shadow-md"
-              >
-                <span className="font-serif font-semibold text-base text-strong">
-                  {item.title ?? item.name}
-                </span>
-                {item.description ? (
-                  <span className="text-muted-foreground text-sm leading-relaxed">
-                    {item.description}
-                  </span>
-                ) : null}
-              </Link>
+              <Card interactive asChild>
+                <Link
+                  href={`/components/${item.name}/`}
+                  className="h-full no-underline"
+                >
+                  <CardHeader>
+                    <CardTitle className="font-serif text-base">
+                      {item.title ?? item.name}
+                    </CardTitle>
+                    {item.description ? (
+                      <CardDescription>{item.description}</CardDescription>
+                    ) : null}
+                  </CardHeader>
+                </Link>
+              </Card>
             </li>
           ))}
         </ul>

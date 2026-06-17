@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="handoff/assets/packed-mark.svg" alt="Packed" width="48" height="48" />
+</p>
+
 # packed.ui
 
 The Packed design system as a standalone [shadcn](https://ui.shadcn.com)
