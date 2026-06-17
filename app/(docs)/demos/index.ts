@@ -26,6 +26,7 @@ import InputOtpDemo from "./input-otp";
 import ItemDemo from "./item";
 import KbdDemo from "./kbd";
 import LabelDemo from "./label";
+import LogoDemo from "./logo";
 import MenubarDemo from "./menubar";
 import NavigationMenuDemo from "./navigation-menu";
 import PaginationDemo from "./pagination";
@@ -77,6 +78,7 @@ export const demos: Record<string, ComponentType> = {
   item: ItemDemo,
   kbd: KbdDemo,
   label: LabelDemo,
+  logo: LogoDemo,
   menubar: MenubarDemo,
   "navigation-menu": NavigationMenuDemo,
   pagination: PaginationDemo,
