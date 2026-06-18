@@ -39,16 +39,16 @@ export const TagBrand: Story = {
   },
 };
 
-export const OnTime: Story = {
+export const Success: Story = {
   args: {
-    variant: "ontime",
+    variant: "success",
     children: "On time",
   },
 };
 
-export const Delayed: Story = {
+export const Warning: Story = {
   args: {
-    variant: "delayed",
+    variant: "warning",
     children: "Delayed 40m",
   },
 };
@@ -63,8 +63,8 @@ export const AllVariants: Story = {
         <Badge variant="tagBrand">Priority</Badge>
       </div>
       <div className="flex flex-wrap items-center justify-center gap-2">
-        <Badge variant="ontime">On time</Badge>
-        <Badge variant="delayed">Delayed 40m</Badge>
+        <Badge variant="success">On time</Badge>
+        <Badge variant="warning">Delayed 40m</Badge>
       </div>
     </div>
   ),
