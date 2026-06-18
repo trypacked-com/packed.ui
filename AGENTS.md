@@ -2,7 +2,7 @@
 
 This repo holds the Packed design system. Full brand narrative lives in the
 `packed-design` skill (`skills/packed-design/references/README.md`). Tokens:
-`handoff/tokens/*.css` (web) and `theme.ts` (React Native); `STYLE_GUIDE.md` is
+`registry/styles/packed-theme-tokens.css` (web); `STYLE_GUIDE.md` is
 the decision-level brief. The rules below are non-negotiable — do not reintroduce
 framework defaults (shadcn/MUI ship cool-grey ramps, hard-black shadows, and
 sharp corners; we use warm sand, soft warm-tinted shadows, and rounded corners).
@@ -50,7 +50,7 @@ sharp corners; we use warm sand, soft warm-tinted shadows, and rounded corners).
 ## Tailwind · tokens · utilities
 - Prefer **theme tokens and named utilities** over arbitrary values. Do not use
   `property-[value]` / `property-[var(--x)]` unless genuinely one-off.
-- Design tokens live in `handoff/tokens/*.css` (and `app/globals.css`). Add missing
+- Design tokens live in `registry/styles/packed-theme-tokens.css` (and `app/globals.css`). Add missing
   tokens there first, then use the generated class
   (`bg-app`, `text-muted`, `border-subtle`, `rounded-lg`, `shadow-card`, …).
 - Reuse shared surface/elevation helpers (role aliases `--elev-card` /
@@ -128,4 +128,4 @@ All skills live in the repo-root `skills/` directory. Install with `bunx skills 
 | **packed-design** | Brand / visual rules |
 | **packed-writing** | Copy and voice |
 
-Rules always applied in this workspace: `AGENTS.md` + `handoff/tokens/*.css`.
+Rules always applied in this workspace: `AGENTS.md` + `registry/styles/packed-theme-tokens.css`.

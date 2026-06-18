@@ -8,7 +8,7 @@ Three surfaces, one language: agent-dashboard (web), marketing-site (web), clien
 
 ## Sources
 
-The token source of truth is `packed.ui/handoff/`: `styles.css` → `tokens/*.css` (web) and `theme.ts` (React Native). The full decision-level brief is `packed.ui/handoff/STYLE_GUIDE.md`. This file is the brand narrative — when prose here and a token disagree, **the token wins**. Edit this file when brand rules change.
+The token source of truth is `packed.ui/registry/styles/packed-theme-tokens.css` (web). The full decision-level brief is `packed.ui/STYLE_GUIDE.md`. This file is the brand narrative — when prose here and a token disagree, **the token wins**. Edit this file when brand rules change.
 
 ## The single non-negotiable rule
 
@@ -149,7 +149,7 @@ Generous breathing room; don't crowd. Dashboard: `264px` sidebar (`--sidebar-w`)
 
 ## Logo & agency branding
 
-**Packed mark** — bespoke suitcase SVG (`packed-mark.svg`, `packed-mark-white.svg` in `assets/`). On light → `--brand` fill; on dark/photo → white version. Min **24px** (`--logo-min`), clear space **50%** of mark height all sides. Ship via `react-native-svg` on native — not a Lucide glyph.
+**Packed mark** — bespoke suitcase SVG (`packed-mark.svg`, `packed-mark-white.svg` in `public/`). On light → `--brand` fill; on dark/photo → white version. Min **24px** (`--logo-min`), clear space **50%** of mark height all sides. Ship via `react-native-svg` on native — not a Lucide glyph.
 
 > **⚑ Substitution flagged.** The logo SVGs are not vendored into this skill yet — source them from `packed.ui` assets when available.
 

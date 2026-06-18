@@ -56,9 +56,9 @@ const badgeVariants = cva(
         outline: "border-border text-foreground [a&]:hover:bg-brand-subtle",
         ghost: "[a&]:hover:bg-brand-subtle",
         link: "text-link underline-offset-4 [a&]:hover:underline",
-        // Soft brand badge (Badge handoff: brand tone)
+        // Soft brand badge
         brand: "bg-brand-subtle text-link [a&]:hover:bg-brand-subtle",
-        // Tag handoff — neutral / branded chips
+        // Neutral / branded chips
         tag: "border-border bg-card text-foreground text-sm [a&]:hover:bg-brand-subtle",
         tagBrand: "border-brand bg-brand-subtle text-link text-sm",
         // Status — functional fg/bg pairs (domain labels live in the app)

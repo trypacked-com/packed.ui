@@ -1,8 +1,7 @@
-<p align="center">
-  <img src="handoff/assets/packed-mark.svg" alt="Packed" width="48" height="48" />
-</p>
-
-# packed.ui
+<h1>
+  <img src="public/packed-mark.svg" alt="Packed" width="40" height="40" valign="middle" />
+  packed.ui
+</h1>
 
 The Packed design system as a standalone [shadcn](https://ui.shadcn.com)
 registry — warm, sunset-led React components (cream + orange, Lora / Figtree /
