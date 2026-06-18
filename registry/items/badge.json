@@ -2,7 +2,7 @@
   "name": "badge",
   "type": "registry:ui",
   "title": "Badge",
-  "description": "Compact pill label for statuses, counts and categories. Use the semantic tones for flight states.",
+  "description": "Compact pill label for statuses, counts and categories. Use success, info, warning, danger, and neutral for status dots.",
   "dependencies": ["class-variance-authority", "radix-ui"],
   "registryDependencies": ["@packed/utils"],
   "files": [

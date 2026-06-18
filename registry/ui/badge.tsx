@@ -5,19 +5,19 @@ import type * as React from "react";
 import { cn } from "@/registry/lib/utils";
 
 const STATUS_VARIANTS = [
-  "ontime",
-  "boarding",
-  "delayed",
-  "cancelled",
-  "landed",
+  "success",
+  "info",
+  "warning",
+  "danger",
+  "neutral",
 ] as const;
 
 const STATUS_DOT: Record<(typeof STATUS_VARIANTS)[number], string> = {
-  ontime: "var(--green-500)",
-  boarding: "var(--sky-500)",
-  delayed: "var(--amber-500)",
-  cancelled: "var(--red-500)",
-  landed: "var(--sand-500)",
+  success: "var(--green-500)",
+  info: "var(--sky-500)",
+  warning: "var(--amber-500)",
+  danger: "var(--red-500)",
+  neutral: "var(--sand-500)",
 };
 
 function StatusDot({
@@ -61,16 +61,15 @@ const badgeVariants = cva(
         // Tag handoff — neutral / branded chips
         tag: "border-border bg-card text-foreground text-sm [a&]:hover:bg-brand-subtle",
         tagBrand: "border-brand bg-brand-subtle text-link text-sm",
-        // StatusPill handoff — functional status fg/bg pairs
-        ontime:
+        // Status — functional fg/bg pairs (domain labels live in the app)
+        success:
           "gap-[7px] bg-status-ontime-bg px-3 py-1.5 pl-2.5 text-sm text-status-ontime-fg font-semibold",
-        boarding:
-          "gap-[7px] bg-status-info-bg px-3 py-1.5 pl-2.5 text-sm text-status-info-fg font-semibold",
-        delayed:
+        info: "gap-[7px] bg-status-info-bg px-3 py-1.5 pl-2.5 text-sm text-status-info-fg font-semibold",
+        warning:
           "gap-[7px] bg-status-delay-bg px-3 py-1.5 pl-2.5 text-sm text-status-delay-fg font-semibold",
-        cancelled:
+        danger:
           "gap-[7px] bg-status-cancel-bg px-3 py-1.5 pl-2.5 text-sm text-status-cancel-fg font-semibold",
-        landed:
+        neutral:
           "gap-[7px] bg-muted px-3 py-1.5 pl-2.5 text-sm text-muted-text font-semibold",
       },
     },
