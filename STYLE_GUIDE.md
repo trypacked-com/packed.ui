@@ -97,13 +97,17 @@ All listed in `tokens/brand.css §5` with ratios. Key rules:
 - `--text-subtle` is for **large or decorative** text only — never body copy.
 - White on `--accent` is **large/semibold** only.
 
-### 2.6 Gradients & image treatment (`tokens/brand.css §1–2`)
+### 2.6 Gradients & image treatment (`registry/styles/packed-theme-effects.css`)
 - Signature sunset: `--grad-sunset`; marketing CTA band: `--grad-cta`; deepest
   accent: `--grad-ember`. All **135°**.
+- Dawn wash: `--grad-dawn` for soft hero backgrounds.
 - Sunset→sky blend `--grad-journey` is for trip/weather heroes **only**, sparing.
 - Destination **photos** always get a scrim (`--scrim-bottom` default) so white
   text stays legible; show `--photo-fallback` while loading. To keep a photo
   on-palette behind a logo lockup, lay `--wash-brand` over it.
+- On-gradient content: `--on-grad`, `--on-grad-muted`, `--on-grad-shadow`.
+- Glass (floating chrome only): `--glass-bar-bg`, `--glass-bar-blur`,
+  `--glass-on-photo`, `--glass-tile`, `--glass-tile-blur`.
 
 ### 2.7 Dark theme
 A **warm** dark foundation exists in `tokens/brand.css §10` under
@@ -317,6 +321,8 @@ React primitives in `registry/ui/`, published via the `@packed` shadcn registry.
 | Concern | File |
 |---|---|
 | Design tokens (web) | `registry/styles/packed-theme-tokens.css` |
+| Marketing / effects tokens | `registry/styles/packed-theme-effects.css` |
+| React Native theme mirror | `registry/lib/theme.ts` |
 | Tailwind theme bridge | `registry/styles/packed-theme.css` |
 
 ---

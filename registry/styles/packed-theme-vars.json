@@ -98,7 +98,22 @@
     "logo-mark-band-opacity": "0.32",
     "logo-mark-latch": "var(--brand-subtle)",
     "logo-min": "24px",
-    "logo-default": "30px"
+    "logo-default": "30px",
+    "grad-dawn": "linear-gradient(135deg, var(--orange-50) 0%, var(--sand-50) 42%, color-mix(in srgb, var(--sky-50) 60%, var(--sand-50)) 100%)",
+    "grad-sunset": "linear-gradient(135deg, var(--orange-400) 0%, var(--orange-600) 52%, var(--orange-800) 100%)",
+    "grad-cta": "linear-gradient(135deg, var(--orange-500) 0%, var(--orange-600) 48%, var(--orange-700) 100%)",
+    "grad-ember": "linear-gradient(135deg, var(--orange-700) 0%, var(--orange-900) 100%)",
+    "grad-journey": "linear-gradient(135deg, var(--orange-500) 0%, var(--orange-400) 38%, var(--sky-500) 100%)",
+    "on-grad": "#ffffff",
+    "on-grad-muted": "color-mix(in srgb, #ffffff 82%, transparent)",
+    "on-grad-shadow": "0 1px 10px rgba(56, 50, 43, 0.42)",
+    "photo-fallback": "linear-gradient(135deg, var(--sand-200) 0%, var(--orange-100) 46%, var(--sky-100) 100%)",
+    "scrim-bottom": "linear-gradient(to top, color-mix(in srgb, var(--sand-900) 78%, transparent) 0%, color-mix(in srgb, var(--sand-900) 38%, transparent) 42%, transparent 100%)",
+    "glass-bar-bg": "color-mix(in srgb, var(--surface-card) 82%, transparent)",
+    "glass-bar-blur": "10px",
+    "glass-on-photo": "color-mix(in srgb, var(--sand-900) 28%, transparent)",
+    "glass-tile": "color-mix(in srgb, var(--sand-0) 72%, transparent)",
+    "glass-tile-blur": "12px"
   },
   "dark": {
     "brand": "var(--orange-400)",
@@ -141,9 +156,16 @@
     "logo-mark-stroke": "var(--sand-0)",
     "logo-mark-band": "var(--brand)",
     "logo-mark-band-opacity": "0.55",
-    "logo-mark-latch": "var(--brand)"
+    "logo-mark-latch": "var(--brand)",
+    "grad-dawn": "linear-gradient(135deg, #2a1b12 0%, var(--bg-app) 45%, #122636 100%)",
+    "grad-cta": "linear-gradient(135deg, var(--orange-600) 0%, var(--orange-700) 48%, var(--orange-800) 100%)",
+    "grad-sunset": "linear-gradient(135deg, var(--orange-500) 0%, var(--orange-700) 52%, var(--orange-900) 100%)",
+    "photo-fallback": "linear-gradient(135deg, #322c25 0%, #2a1b12 46%, #122636 100%)",
+    "glass-bar-bg": "color-mix(in srgb, var(--surface-card) 78%, transparent)",
+    "glass-tile": "color-mix(in srgb, var(--surface-card) 68%, transparent)"
   },
   "theme": {
+    "--color-app": "var(--bg-app)",
     "--color-background": "var(--bg-app)",
     "--color-foreground": "var(--text-body)",
     "--color-card": "var(--surface-card)",
