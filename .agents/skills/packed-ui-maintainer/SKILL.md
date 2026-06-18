@@ -1,6 +1,6 @@
 ---
 name: packed-ui-maintainer
-description: Maintain the Packed design system & @packed registry — add or update registry components, build registry.json, stories, and docs. Use in the packed.ui repo when editing registry, building the registry, or changing tokens. Not for consuming @packed in other apps.
+description: Maintain the packed.ui shadcn registry — add or update registry components, build registry.json, stories, and docs. Use in the packed.ui repo when editing registry/ui, running build:registry, or changing tokens in app/globals.css. Not for consuming @packed in other apps.
 paths:
   - "registry/**"
   - "stories/**"
@@ -12,7 +12,7 @@ paths:
 
 # packed.ui (maintainer)
 
-Use only in the `packed.ui` repo. Full brand narrative: **packed-design** skill (`references/README.md`). Voice: **packed-writing**.
+Use only in the [packed.ui](https://github.com/trypacked-com/packed.ui) repo. Follow `AGENTS.md` and `app/globals.css`. Full brand narrative: **packed-design** skill (`references/README.md`). Voice: **packed-writing**.
 
 Consumers install via `@packed` — use the **packed-ui** skill, not this one.
 
@@ -25,7 +25,7 @@ Consumers install via `@packed` — use the **packed-ui** skill, not this one.
 5. Docs route in `app/(docs)/components/[slug]/page.tsx`
 6. Visual + build checks (`bun run test:visual`, `bun run build`)
 
-Match existing patterns — reuse shared surface/elevation helpers (role aliases `--elev-card` / `--elev-popover` / `--elev-modal`) rather than one-off restyling each component. Build any new component for **both platforms** (web + React Native) with an identical prop API; native equivalents use `Pressable` / `View` / `Text` / `TextInput` against `theme.ts`.
+Match existing registry patterns: reuse role elevation aliases (`--elev-card` / `--elev-popover` / `--elev-modal`) and token utilities — extend those patterns, do not one-off restyle each component.
 
 ## Registry publish
 
@@ -35,20 +35,15 @@ Match existing patterns — reuse shared surface/elevation helpers (role aliases
 
 ## Tokens
 
-`registry/styles/packed-theme-tokens.css` is the source of truth for web theme tokens. The theme registry item is generated from these — change tokens there first, then rebuild the registry. `STYLE_GUIDE.md` is the prose brief; when prose and a token disagree, the token wins — update the guide to match.
+`registry/styles/packed-theme-tokens.css` and `app/globals.css` are the source of truth for theme tokens. The theme registry item (`registry:theme`) is generated from here — change tokens in CSS first, then rebuild registry if the theme item needs to reflect it. `STYLE_GUIDE.md` is the prose brief; when prose and a token disagree, the token wins — update the guide to match.
 
 ## Do not
 
 - Add consumer-app setup instructions to registry components (no `components.json` advice in component source)
-- Hard-code hex / px / font / shadow — reference semantic tokens
-- Reintroduce cool-grey neutrals, hard-black shadows, sharp corners, or serif body copy — see **packed-design**
-
-## Definition of done
-
-Reads from tokens on both platforms · matching prop API web + native · passes voice + sentence-case review.
+- Reintroduce shadcn defaults (cool-grey ramps, hard-black shadows, sharp corners) — see `AGENTS.md`
 
 ## Install
 
 ```bash
-bunx skills add ./skills --skill packed-ui-maintainer -a cursor -a claude-code -y
+bunx skills add trypacked-com/skills --skill packed-ui-maintainer -a cursor -a claude-code -y
 ```

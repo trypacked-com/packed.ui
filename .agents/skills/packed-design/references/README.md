@@ -1,18 +1,22 @@
 # Packed — Design System
 
-Travel companion for booking agents and their clients. Packed helps travel **agents** deliver a great client experience *after* booking — agents build itineraries in a **web dashboard**; their clients use a **React Native app** for live flight alerts and destination weather. There is also a **marketing website**.
+Travel companion for booking agents and their clients. Packed helps travel **agents** deliver a great client experience *after* booking — agents build itineraries in a **web dashboard**; their clients get live flight alerts and destination weather. There is also a **marketing website**.
 
 > **Tagline.** The trip is booked. The magic is what comes after.
 
-Three surfaces, one language: agent-dashboard (web), marketing-site (web), client app (React Native). Same tokens, same voice, same components.
+Two web surfaces, one language: agent dashboard and marketing site. Same tokens, same voice, same components.
 
 ## Sources
 
-The token source of truth is `packed.ui/registry/styles/packed-theme-tokens.css` (web). The full decision-level brief is `packed.ui/STYLE_GUIDE.md`. This file is the brand narrative — when prose here and a token disagree, **the token wins**. Edit this file when brand rules change.
+The voice, palette, type, and motif rules below come from the Packed brand brief. Edit this file in [packed.skills](https://github.com/trypacked-com/skills) when brand rules change.
 
-## The single non-negotiable rule
+Consumers get tokens via `@packed/theme` after install — see **packed-ui**. When prose here and an installed token disagree, **the token wins**.
 
-**Tokens are the contract.** Never hard-code a hex, px, font name, or shadow. Reference **semantic** tokens (`--brand`, `--text-muted`, `--grad-cta`), not raw scale steps (`--orange-500`). One token edit must reskin all three surfaces.
+## Index
+
+```
+README.md                  ← this file
+```
 
 ---
 
@@ -87,7 +91,7 @@ Three families, three jobs.
 - **Figtree** (geometric sans) — all UI and body. Weights **300–800**, very legible at every size.
 - **DM Mono** — numbers, times, flight codes, gates (`TP1234`, `08:45`, `Gate B7`, `12C`). Tabular and calm.
 
-Scale: display `clamp(2.75rem,6vw,4.5rem)`, h1 `clamp(2.25rem,4.5vw,3.25rem)`, h2 `clamp(1.75rem,3.2vw,2.5rem)`, h3 24, h4 20, body-lg 18, body 16, small 14, xs 12, eyebrow 11 (Figtree 700, UPPERCASE, `0.12em`). Line heights: tight 1.1, snug 1.25, normal 1.5, relaxed 1.65 (body default). **RN has no `clamp()`** — resolve display sizes to fixed phone numbers (h1 ≈ 34, h2 ≈ 26, h3 ≈ 22).
+Scale: display `clamp(2.75rem,6vw,4.5rem)`, h1 `clamp(2.25rem,4.5vw,3.25rem)`, h2 `clamp(1.75rem,3.2vw,2.5rem)`, h3 24, h4 20, body-lg 18, body 16, small 14, xs 12, eyebrow 11 (Figtree 700, UPPERCASE, `0.12em`). Line heights: tight 1.1, snug 1.25, normal 1.5, relaxed 1.65 (body default).
 
 **Sentence case everywhere** — headings, buttons, nav. ALL-CAPS only for the eyebrow (`.pk-eyebrow`).
 
@@ -113,11 +117,11 @@ Default surfaces are flat cream (`--bg-app`) and white cards. The sunset gradien
 
 ### Animation
 
-Gentle and brief — no harsh bounces, no long animations. `--dur-fast 120ms` (hover/press), `--dur-base 200ms` (toggles), `--dur-slow 320ms`. `--ease-out` to settle, `--ease-in-out` for symmetric moves, `--ease-soft` (slight overshoot) for **one** delightful moment — the switch thumb. The live status dot has a slow pulse. Always respect `prefers-reduced-motion` / Reduce Motion.
+Gentle and brief — no harsh bounces, no long animations. `--dur-fast 120ms` (hover/press), `--dur-base 200ms` (toggles), `--dur-slow 320ms`. `--ease-out` to settle, `--ease-in-out` for symmetric moves, `--ease-soft` (slight overshoot) for **one** delightful moment — the switch thumb. The live status dot has a slow pulse. Always respect `prefers-reduced-motion`.
 
 ### Hover & press states
 
-Buttons darken one step (`--brand` → `--brand-hover`) and lift `-1px` on hover; ghost/soft buttons fill with `--brand-subtle`; nav/list rows wash to `--state-row-hover`. Press settles back down — **no colour inversion**. **Touch has no hover** — on native, collapse hover + press into the pressed state and drop hover-only affordances (tooltips, row washes).
+Buttons darken one step (`--brand` → `--brand-hover`) and lift `-1px` on hover; ghost/soft buttons fill with `--brand-subtle`; nav/list rows wash to `--state-row-hover`. Press settles back down — **no colour inversion**.
 
 ### Cards & surfaces
 
@@ -129,7 +133,7 @@ For floating chrome over content only — not decorative. Sticky bars use `--gla
 
 ### Imagery
 
-Warm, sunlit, **golden-hour** travel photography — sunsets, coastlines, old-town streets. Avoid cold/blue-grey or clinical stock. Store a photo URL per trip/destination; render behind the hero with a scrim (`--scrim-bottom` default) so white text stays legible; show `--photo-fallback` while loading. No device frames, no perspective tilts, no decorative numbers or fake stats.
+Warm, sunlit, **golden-hour** travel photography — sunsets, coastlines, old-town streets. Avoid cold/blue-grey or clinical stock. Render behind the hero with a scrim (`--scrim-bottom` default) so white text stays legible; show `--photo-fallback` while loading. No device frames, no perspective tilts, no decorative numbers or fake stats.
 
 ### Layout
 
@@ -139,19 +143,15 @@ Generous breathing room; don't crowd. Dashboard: `264px` sidebar (`--sidebar-w`)
 
 ## Iconography
 
-- **Lucide** only — rounded line icons, **2px** stroke (`2.4` for active/emphasis), round caps/joins. `lucide-react` (web) / `lucide-react-native` (native); names match across both.
+- **Lucide** only — rounded line icons, **2px** stroke (`2.4` for active/emphasis), round caps/joins via `lucide-react`.
 - **Colour.** `--text-muted` at rest, `--brand` when active/meaningful, white on imagery/gradients. Currentcolor only — never multicolor.
 - **Never** emoji or unicode as icons; never mix in a second/filled set.
-
-> **⚑ Substitution flagged.** Lucide is a stand-in via CDN in the kits — install the package for production.
 
 ---
 
 ## Logo & agency branding
 
-**Packed mark** — bespoke suitcase SVG (`packed-mark.svg`, `packed-mark-white.svg` in `public/`). On light → `--brand` fill; on dark/photo → white version. Min **24px** (`--logo-min`), clear space **50%** of mark height all sides. Ship via `react-native-svg` on native — not a Lucide glyph.
-
-> **⚑ Substitution flagged.** The logo SVGs are not vendored into this skill yet — source them from `packed.ui` assets when available.
+**Packed mark** — use `@packed/logo` from the registry. Do not hand-roll the suitcase SVG or substitute a Lucide glyph. Min **24px** (`--logo-min`), clear space **50%** of mark height all sides.
 
 **Agency logos — the "brand chip" (white-label).** Agencies upload their own logo (transparent or opaque-on-white). Always place it inside a **white brand chip** (rounded white card, soft shadow) so both render cleanly — tokens `--chip-bg`, `--chip-radius`, `--chip-shadow`, `--chip-logo-h`. On photos use `--chip-shadow-on-photo`. Ask agencies for ~2–3:1 wordmarks.
 

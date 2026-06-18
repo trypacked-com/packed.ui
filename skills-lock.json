@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "skills": {
+    "packed-design": {
+      "source": "/Users/josh/projects/trypacked.com/skills",
+      "sourceType": "local",
+      "computedHash": "666b26edd929bd0adec96098d420518b47c9cbfafb266a10c46d7f3c0aed6dd8"
+    },
+    "packed-ui-maintainer": {
+      "source": "/Users/josh/projects/trypacked.com/skills",
+      "sourceType": "local",
+      "computedHash": "3d0ed1405340288a5bfdb6e4e614645838262828c093968b8ef841f030a628de"
+    }
+  }
+}
