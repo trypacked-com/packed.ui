@@ -224,6 +224,7 @@
   --color-brand-subtle: var(--brand-subtle);
   --color-on-brand: var(--on-brand);
   --color-accent-subtle: var(--accent-subtle);
+  --color-accent-hover: var(--accent-hover);
   --color-surface-sunken: var(--surface-sunken);
   --color-strong: var(--text-strong);
   --color-muted-text: var(--text-muted);
@@ -254,6 +255,15 @@
   --color-sidebar-accent-foreground: var(--text-link);
   --color-sidebar-border: var(--border-subtle);
   --color-sidebar-ring: var(--ring-focus);
+
+  /* Logo mark */
+  --color-logo-mark: var(--logo-mark);
+  --color-logo-mark-stroke: var(--logo-mark-stroke);
+  --color-logo-mark-band: var(--logo-mark-band);
+  --color-logo-mark-latch: var(--logo-mark-latch);
+  --logo-mark-band-opacity: var(--logo-mark-band-opacity);
+  --spacing-logo-min: var(--logo-min);
+  --spacing-logo-default: var(--logo-default);
 
   --font-sans: var(--font-sans);
   --font-serif: var(--font-serif);

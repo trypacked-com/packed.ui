@@ -86,7 +86,7 @@
       "name": "badge",
       "type": "registry:ui",
       "title": "Badge",
-      "description": "Compact pill label for statuses, counts and categories. Use the semantic tones for flight states.",
+      "description": "Compact pill label for statuses, counts and categories. Use success, info, warning, danger, and neutral for status dots.",
       "dependencies": [
         "class-variance-authority",
         "radix-ui"
@@ -948,7 +948,7 @@
       "name": "theme-provider",
       "type": "registry:lib",
       "title": "Theme Provider",
-      "description": "Light/dark switching for Packed tokens. Toggles .dark on the html element and persists to localStorage. Add themeInitScript to your root layout to avoid a flash.",
+      "description": "Light/dark switching for Packed tokens. Wrap your app once — works in Next.js and Vite. Persists to a cookie; priority: cookie, defaultTheme prop, then system.",
       "registryDependencies": [
         "@packed/theme"
       ],

@@ -1,15 +1,36 @@
 "use client";
 
-import { createContext, useContext, useEffect, useState } from "react";
+import {
+  createContext,
+  useContext,
+  useLayoutEffect,
+  useState,
+} from "react";
 
-type Theme = "light" | "dark";
+import { cn } from "@/registry/lib/utils";
 
-const STORAGE_KEY = "packed-theme";
+export const THEME_STORAGE_KEY = "packed-theme";
+
+export type Theme = "light" | "dark";
 
 const ThemeContext = createContext<{
   theme: Theme;
   setTheme: (theme: Theme) => void;
 } | null>(null);
+
+function getThemeCookie(): string | undefined {
+  if (typeof document === "undefined") return undefined;
+
+  const match = document.cookie.match(
+    new RegExp(`(?:^|; )${THEME_STORAGE_KEY}=([^;]*)`),
+  );
+
+  return match?.[1];
+}
+
+function setThemeCookie(theme: Theme) {
+  document.cookie = `${THEME_STORAGE_KEY}=${theme};path=/;max-age=31536000;SameSite=Lax`;
+}
 
 function getSystemTheme(): Theme {
   return window.matchMedia("(prefers-color-scheme: dark)").matches
@@ -17,30 +38,43 @@ function getSystemTheme(): Theme {
     : "light";
 }
 
-function applyTheme(theme: Theme) {
-  document.documentElement.classList.toggle("dark", theme === "dark");
+function resolveTheme(
+  cookieValue: string | undefined,
+  defaultTheme: Theme | undefined,
+): Theme {
+  if (cookieValue === "dark" || cookieValue === "light") return cookieValue;
+  if (defaultTheme === "dark" || defaultTheme === "light") return defaultTheme;
+  if (typeof window !== "undefined") return getSystemTheme();
+  return defaultTheme ?? "light";
 }
 
-export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setThemeState] = useState<Theme>("light");
+export function ThemeProvider({
+  children,
+  defaultTheme,
+}: {
+  children: React.ReactNode;
+  defaultTheme?: Theme;
+}) {
+  const [theme, setThemeState] = useState<Theme>(() =>
+    resolveTheme(getThemeCookie(), defaultTheme),
+  );
 
-  useEffect(() => {
-    const stored = localStorage.getItem(STORAGE_KEY);
-    const initial =
-      stored === "dark" || stored === "light" ? stored : getSystemTheme();
-    setThemeState(initial);
-    applyTheme(initial);
-  }, []);
+  useLayoutEffect(() => {
+    const resolved = resolveTheme(getThemeCookie(), defaultTheme);
+    setThemeState(resolved);
+    setThemeCookie(resolved);
+  }, [defaultTheme]);
 
   function setTheme(next: Theme) {
     setThemeState(next);
-    localStorage.setItem(STORAGE_KEY, next);
-    applyTheme(next);
+    setThemeCookie(next);
   }
 
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
-      {children}
+      <div className={cn("min-h-full", theme === "dark" && "dark")}>
+        {children}
+      </div>
     </ThemeContext.Provider>
   );
 }
@@ -52,5 +86,3 @@ export function useTheme() {
   }
   return context;
 }
-
-export const themeInitScript = `(function(){try{var s=localStorage.getItem("${STORAGE_KEY}");var t=s==="dark"||s==="light"?s:matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";if(t==="dark")document.documentElement.classList.add("dark")}catch(e){}})()`;
