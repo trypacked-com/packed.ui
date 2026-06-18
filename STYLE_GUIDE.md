@@ -3,8 +3,7 @@
 > **Purpose of this file.** A complete, decision-level brief an AI (or engineer)
 > can build from without guessing. It states *what* every choice is, the *exact
 > token* that encodes it, and the *why* behind it. Pair it with the machine
-> source of truth: `styles.css` → `tokens/*.css` (web) and `theme.ts` (React
-> Native). When this prose and a token disagree, **the token wins** — update this
+> source of truth: `registry/styles/packed-theme-tokens.css` (web). When this prose and a token disagree, **the token wins** — update this
 > file to match.
 
 ---
@@ -239,7 +238,7 @@ state and drop hover-only affordances (tooltips, row-hover washes).
 - Colour: `--text-muted` at rest, `--brand` when active/meaningful, white on
   imagery/gradients.
 - **Never** emoji or unicode as icons; never mix in a second/filled icon set.
-- The **suitcase logo mark** is bespoke SVG in `assets/` (ship via
+- The **suitcase logo mark** is bespoke SVG in `public/` (ship via
   `react-native-svg`), **not** a Lucide glyph.
 
 ---
@@ -247,9 +246,9 @@ state and drop hover-only affordances (tooltips, row-hover washes).
 ## 8 · Logo & agency branding
 
 ### 8.1 Packed mark
-Suitcase mark in `assets/` (`packed-mark.svg`, `packed-mark-white.svg`,
+Suitcase mark in `public/` (`packed-mark.svg`, `packed-mark-white.svg`,
 `packed-tile.svg`, `favicon.svg`). On light → `--brand` fill; on dark/photo →
-white version. Specs in `tokens/brand.css §4`: min **24px** (`--logo-min`),
+white version. Logo specs in `registry/styles/packed-theme-tokens.css`: min **24px** (`--logo-min`),
 clear space **50%** of mark height all sides (`--logo-clearspace`).
 
 ### 8.2 Agency logos — the "brand chip" (white-label)
@@ -300,9 +299,7 @@ streets. Avoid cold/blue-grey or clinical stock.
 
 ## 11 · Components
 
-React primitives in `components/`, exposed on
-`window.PackedDesignSystem_477618`: **Button, IconButton, Card, Badge, Tag,
-Avatar, StatusPill, Input, Select, Checkbox, Switch, Tabs, Toast**.
+React primitives in `registry/ui/`, published via the `@packed` shadcn registry.
 
 - **Build any new component for both platforms with an identical prop API**
   (e.g. Button: `variant`, `size`, `pill`, `iconLeft/Right`).
@@ -319,14 +316,8 @@ Avatar, StatusPill, Input, Select, Checkbox, Switch, Tabs, Toast**.
 
 | Concern | File |
 |---|---|
-| Webfonts | `tokens/fonts.css` |
-| Raw scales + core semantics | `tokens/colors.css` |
-| **Gradients, scrims, brand chip, logo specs, contrast pairs, charts, elevation roles, glass, dark theme** | `tokens/brand.css` |
-| Type scale, families, weights | `tokens/typography.css` |
-| Spacing, radii, shadows, motion, layout | `tokens/spacing.css` |
-| Reset + element defaults + `.pk-eyebrow` | `tokens/base.css` |
-| Global entry (link this one on web) | `styles.css` |
-| Native bridge (mirror of the above) | `theme.ts` — full copy in `handoff/Developer Handoff.html` |
+| Design tokens (web) | `registry/styles/packed-theme-tokens.css` |
+| Tailwind theme bridge | `registry/styles/packed-theme.css` |
 
 ---
 

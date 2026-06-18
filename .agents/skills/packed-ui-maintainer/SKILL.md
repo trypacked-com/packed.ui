@@ -1,9 +1,8 @@
 ---
 name: packed-ui-maintainer
-description: Maintain the Packed design system & @packed registry — add or update registry components, build registry.json, stories, and docs. Use in the packed.ui repo when editing registry/handoff, building the registry, or changing tokens. Not for consuming @packed in other apps.
+description: Maintain the Packed design system & @packed registry — add or update registry components, build registry.json, stories, and docs. Use in the packed.ui repo when editing registry, building the registry, or changing tokens. Not for consuming @packed in other apps.
 paths:
   - "registry/**"
-  - "handoff/**"
   - "stories/**"
   - "public/registry.json"
   - "registry.json"
@@ -16,8 +15,6 @@ paths:
 Use only in the `packed.ui` repo. Full brand narrative: **packed-design** skill (`references/README.md`). Voice: **packed-writing**.
 
 Consumers install via `@packed` — use the **packed-ui** skill, not this one.
-
-> **⚑ Confirm.** `packed.ui` currently ships the design system as a **handoff** (`handoff/tokens/*.css`, `handoff/components/*`, `STYLE_GUIDE.md`) and is not yet a published shadcn registry. The registry steps below describe the target workflow — align paths with the repo once the registry build exists.
 
 ## Add or change a component
 
@@ -38,7 +35,7 @@ Match existing patterns — reuse shared surface/elevation helpers (role aliases
 
 ## Tokens
 
-`handoff/tokens/*.css` (web) and `theme.ts` (React Native) are the source of truth for theme tokens. The theme registry item is generated from these — change tokens there first (keep web and native mirrors in sync), then rebuild the registry. `STYLE_GUIDE.md` is the prose brief; when prose and a token disagree, the token wins — update the guide to match.
+`registry/styles/packed-theme-tokens.css` is the source of truth for web theme tokens. The theme registry item is generated from these — change tokens there first, then rebuild the registry. `STYLE_GUIDE.md` is the prose brief; when prose and a token disagree, the token wins — update the guide to match.
 
 ## Do not
 

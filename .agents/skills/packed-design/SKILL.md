@@ -4,9 +4,9 @@ description: Use when generating branded UI, HTML mocks, marketing surfaces, or 
 user-invocable: true
 ---
 
-Read `references/README.md` in this skill first (vendored brand guide). The machine source of truth for tokens lives in `packed.ui/handoff/` (`styles.css` → `tokens/*.css` for web, `theme.ts` for React Native) — when prose and a token disagree, the token wins.
+Read `references/README.md` in this skill first (vendored brand guide). The machine source of truth for tokens lives in `registry/styles/packed-theme-tokens.css` — when prose and a token disagree, the token wins.
 
-For static mocks and throwaway prototypes: output standalone HTML the user can open, linking the handoff `styles.css`. For production apps consuming `@packed`, also load **packed-ui** for install and compose rules. For copy and voice, load **packed-writing**.
+For static mocks and throwaway prototypes: link `registry/styles/packed-theme-tokens.css` and `registry/styles/packed-theme.css`. For production apps consuming `@packed`, also load **packed-ui** for install and compose rules. For copy and voice, load **packed-writing**.
 
 ## Quick reference
 
@@ -31,10 +31,10 @@ references/README.md       · brand guide (read this first)
 Token source of truth (in the repo, not vendored here):
 
 ```
-packed.ui/handoff/styles.css            · global entry (link this on web)
-packed.ui/handoff/tokens/*.css          · colours, brand, type, spacing, base
-packed.ui/handoff/STYLE_GUIDE.md        · full decision-level brief
-packed.ui/handoff/components/           · React primitives + prompt specs
+packed.ui/registry/styles/packed-theme-tokens.css  · design tokens (web)
+packed.ui/registry/styles/packed-theme.css         · Tailwind theme bridge
+packed.ui/STYLE_GUIDE.md                           · full decision-level brief
+packed.ui/public/                                  · brand assets (logo, favicon)
 ```
 
 ## Install this skill (Cursor + Claude)

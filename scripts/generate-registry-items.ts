@@ -3,7 +3,6 @@ import { basename, resolve } from "node:path";
 
 const root = process.cwd();
 const uiDir = resolve(root, "registry", "ui");
-const handoffDir = resolve(root, "handoff", "components");
 const itemsDir = resolve(root, "registry", "items");
 
 const NPM_DEPS: Record<string, string[]> = {
@@ -27,35 +26,6 @@ function titleCase(name: string) {
     .split("-")
     .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
     .join(" ");
-}
-
-async function handoffDescription(name: string): Promise<string | undefined> {
-  const dirs = ["core", "forms", "feedback", "navigation"];
-  for (const dir of dirs) {
-    const promptPath = resolve(
-      handoffDir,
-      dir,
-      `${titleCase(name).replace(/ /g, "")}.prompt.md`,
-    );
-    const altPath = resolve(
-      handoffDir,
-      dir,
-      `${name
-        .split("-")
-        .map((p) => p.charAt(0).toUpperCase() + p.slice(1))
-        .join("")}.prompt.md`,
-    );
-    for (const path of [promptPath, altPath]) {
-      try {
-        const raw = await readFile(path, "utf8");
-        const first = raw.split("\n").find((line) => line.trim().length > 0);
-        if (first && !first.startsWith("```")) return first.trim();
-      } catch {
-        /* try next */
-      }
-    }
-  }
-  return undefined;
 }
 
 function detectNpmDeps(source: string): string[] {
@@ -82,9 +52,7 @@ await mkdir(itemsDir, { recursive: true });
 for (const file of uiFiles) {
   const name = basename(file, ".tsx");
   const source = await readFile(resolve(uiDir, file), "utf8");
-  const description =
-    (await handoffDescription(name)) ??
-    `Packed ${titleCase(name)} — warm, token-driven UI on sand surfaces.`;
+  const description = `Packed ${titleCase(name)} — warm, token-driven UI on sand surfaces.`;
 
   const item = {
     name,
