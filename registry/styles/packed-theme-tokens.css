@@ -192,11 +192,14 @@
   color-scheme: dark;
 }
 
+@import "./packed-theme-effects.css";
+
 /* ============================================================
    Tailwind v4 theme mapping. shadcn-compatible semantic color
    names point at Packed tokens, plus Packed-named extras.
    ============================================================ */
 @theme inline {
+  --color-app: var(--bg-app);
   --color-background: var(--bg-app);
   --color-foreground: var(--text-body);
   --color-card: var(--surface-card);
