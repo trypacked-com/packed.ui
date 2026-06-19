@@ -54,9 +54,7 @@ export const Forecast: Story = {
           <AlertTitle>Lisbon forecast</AlertTitle>
           <AlertTime>1h ago</AlertTime>
         </AlertHeader>
-        <AlertDescription>
-          Sunny, 24°C when you land tomorrow.
-        </AlertDescription>
+        <AlertDescription>Sunny, 24°C when you land tomorrow.</AlertDescription>
       </AlertContent>
       <AlertDismiss />
     </Alert>

@@ -8,10 +8,7 @@ import {
   Users,
 } from "lucide-react";
 
-import {
-  Avatar,
-  AvatarFallback,
-} from "@/registry/ui/avatar";
+import { Avatar, AvatarFallback } from "@/registry/ui/avatar";
 import {
   Card,
   CardDescription,
@@ -61,7 +58,9 @@ export const TripCard: Story = {
       <CardHeader className="gap-3">
         <div className="flex items-center gap-2.5">
           <Avatar size="sm">
-            <AvatarFallback className="bg-brand text-on-brand">MQ</AvatarFallback>
+            <AvatarFallback className="bg-brand text-on-brand">
+              MQ
+            </AvatarFallback>
           </Avatar>
           <CardTitle className="text-base">Mara Quinn</CardTitle>
         </div>
@@ -71,12 +70,10 @@ export const TripCard: Story = {
             Jun 14 – 21
           </span>
           <span className="inline-flex items-center gap-1.5">
-            <Users className="size-4 text-subtle" />
-            4
+            <Users className="size-4 text-subtle" />4
           </span>
           <span className="inline-flex items-center gap-1.5">
-            <Moon className="size-4 text-subtle" />
-            7 n
+            <Moon className="size-4 text-subtle" />7 n
           </span>
         </CardMeta>
       </CardHeader>

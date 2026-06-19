@@ -104,16 +104,16 @@ function AlertTime({ className, ...props }: React.ComponentProps<"span">) {
   return (
     <span
       data-slot="alert-time"
-      className={cn("text-2xs shrink-0 whitespace-nowrap text-subtle", className)}
+      className={cn(
+        "text-2xs shrink-0 whitespace-nowrap text-subtle",
+        className,
+      )}
       {...props}
     />
   );
 }
 
-function AlertDismiss({
-  className,
-  ...props
-}: React.ComponentProps<"button">) {
+function AlertDismiss({ className, ...props }: React.ComponentProps<"button">) {
   return (
     <button
       type="button"

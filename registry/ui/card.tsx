@@ -46,7 +46,10 @@ function CardMedia({ className, ...props }: React.ComponentProps<"div">) {
   );
 }
 
-function CardMediaOverlay({ className, ...props }: React.ComponentProps<"div">) {
+function CardMediaOverlay({
+  className,
+  ...props
+}: React.ComponentProps<"div">) {
   return (
     <div
       data-slot="card-media-overlay"
@@ -146,10 +149,7 @@ function CardContent({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
       data-slot="card-content"
-      className={cn(
-        "group-data-[padded=false]/card:px-5",
-        className,
-      )}
+      className={cn("group-data-[padded=false]/card:px-5", className)}
       {...props}
     />
   );

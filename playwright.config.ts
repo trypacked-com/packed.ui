@@ -2,6 +2,7 @@ import { defineConfig, devices } from "@playwright/test";
 
 export default defineConfig({
   testDir: "./tests/visual",
+  testMatch: "**/*.visual.ts",
   timeout: 600_000,
   snapshotPathTemplate: "{testDir}/baselines/{arg}{ext}",
   use: {

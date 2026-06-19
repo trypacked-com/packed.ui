@@ -4,21 +4,16 @@ import { addDays, format } from "date-fns";
 import { CalendarIcon } from "lucide-react";
 import * as React from "react";
 import type { DateRange } from "react-day-picker";
-
-import { DatePicker } from "@/registry/ui/date-picker";
 import { Button } from "@/registry/ui/button";
 import { Calendar } from "@/registry/ui/calendar";
+import { DatePicker } from "@/registry/ui/date-picker";
 import {
   Field,
   FieldDescription,
   FieldGroup,
   FieldLabel,
 } from "@/registry/ui/field";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/registry/ui/popover";
+import { Popover, PopoverContent, PopoverTrigger } from "@/registry/ui/popover";
 
 export default function DatePickerDemo() {
   const [date, setDate] = React.useState<Date>();

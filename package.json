@@ -8,8 +8,9 @@
     "build:registry": "bun run scripts/merge-registry-items.ts && bun run scripts/build-registry.ts",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "bun run scripts/build-storybook.ts",
+    "test": "bun test",
     "test:visual": "playwright test",
-    "test:visual:update": "playwright test --update-snapshots",
+    "test:visual:update": "bunx playwright test --update-snapshots",
     "lint": "biome check .",
     "format": "biome format --write ."
   },

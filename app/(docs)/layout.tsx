@@ -17,7 +17,9 @@ export default function DocsLayout({
           className="flex items-center gap-2 font-serif font-semibold text-lg text-strong leading-none tracking-tight"
         >
           <Logo size="sm" />
-          <span>Packed<span className="text-brand">.ui</span></span>
+          <span>
+            Packed<span className="text-brand">.ui</span>
+          </span>
         </Link>
         <nav className="flex items-center gap-5 text-muted-foreground text-sm">
           <ThemeToggle />

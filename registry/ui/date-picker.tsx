@@ -7,11 +7,7 @@ import * as React from "react";
 import { cn } from "@/registry/lib/utils";
 import { Button } from "@/registry/ui/button";
 import { Calendar } from "@/registry/ui/calendar";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/registry/ui/popover";
+import { Popover, PopoverContent, PopoverTrigger } from "@/registry/ui/popover";
 
 type DatePickerProps = {
   date?: Date;

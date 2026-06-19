@@ -8,10 +8,7 @@ import {
 } from "lucide-react";
 import type { ReactNode } from "react";
 
-import {
-  Avatar,
-  AvatarFallback,
-} from "@/registry/ui/avatar";
+import { Avatar, AvatarFallback } from "@/registry/ui/avatar";
 import {
   Card,
   CardDescription,
@@ -76,12 +73,10 @@ export default function CardDemo() {
               Jun 14 – 21
             </span>
             <span className="inline-flex items-center gap-1.5">
-              <Users className="size-4 text-subtle" />
-              4
+              <Users className="size-4 text-subtle" />4
             </span>
             <span className="inline-flex items-center gap-1.5">
-              <Moon className="size-4 text-subtle" />
-              7 n
+              <Moon className="size-4 text-subtle" />7 n
             </span>
           </CardMeta>
         </CardHeader>
@@ -125,12 +120,10 @@ export default function CardDemo() {
               Jul 3 – 10
             </span>
             <span className="inline-flex items-center gap-1.5">
-              <Users className="size-4 text-subtle" />
-              2
+              <Users className="size-4 text-subtle" />2
             </span>
             <span className="inline-flex items-center gap-1.5">
-              <Moon className="size-4 text-subtle" />
-              7 n
+              <Moon className="size-4 text-subtle" />7 n
             </span>
           </CardMeta>
         </CardHeader>
@@ -144,12 +137,17 @@ export default function CardDemo() {
         </CardFooter>
       </Card>
 
-      <Card interactive className="max-w-xs flex-row items-center gap-4 sm:col-span-2 lg:col-span-1">
+      <Card
+        interactive
+        className="max-w-xs flex-row items-center gap-4 sm:col-span-2 lg:col-span-1"
+      >
         <CardIcon>
           <Compass />
         </CardIcon>
         <CardHeader className="gap-0.5 p-0">
-          <CardTitle className="font-serif text-3xl tracking-tight">8</CardTitle>
+          <CardTitle className="font-serif text-3xl tracking-tight">
+            8
+          </CardTitle>
           <CardDescription>Active trips</CardDescription>
         </CardHeader>
       </Card>

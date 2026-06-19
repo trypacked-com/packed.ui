@@ -8,6 +8,8 @@
       "!.next",
       "!out",
       "!storybook-static",
+      "!test-results",
+      "!playwright-report",
       "!public",
       "!registry.json",
       "!**/*.css"
