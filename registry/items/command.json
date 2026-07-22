@@ -4,7 +4,11 @@
   "title": "Command",
   "description": "Packed Command — warm, token-driven UI on sand surfaces.",
   "dependencies": ["cmdk", "lucide-react"],
-  "registryDependencies": ["@packed/dialog", "@packed/utils"],
+  "registryDependencies": [
+    "@packed/dialog",
+    "@packed/input-group",
+    "@packed/utils"
+  ],
   "files": [
     {
       "path": "registry/ui/command.tsx",
