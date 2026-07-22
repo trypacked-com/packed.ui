@@ -1,29 +1,30 @@
-import * as React from "react"
-import { cva, type VariantProps } from "class-variance-authority"
+import { cva, type VariantProps } from "class-variance-authority";
+import { X } from "lucide-react";
+import type * as React from "react";
 
-import { cn } from "@/registry/lib/utils"
+import { cn } from "@/registry/lib/utils";
 
 const alertVariants = cva(
-  "group/alert relative grid w-full gap-0.5 rounded-lg border border-border-subtle border-l-3 bg-card px-2.5 py-2 text-left text-sm text-card-foreground shadow-lg has-data-[slot=alert-action]:relative has-data-[slot=alert-action]:pr-18 has-[>svg]:grid-cols-[auto_1fr] has-[>svg]:gap-x-2 *:[svg]:row-span-2 *:[svg]:translate-y-0.5 *:[svg]:text-current *:[svg:not([class*='size-'])]:size-4",
+  "flex w-full max-w-[360px] items-start gap-3 rounded-lg border-l-[3px] bg-card p-3.5 pl-4 shadow-lg",
   {
     variants: {
       variant: {
         default:
-          "border-l-brand *:[svg]:text-link",
-        info: "border-l-accent *:[svg]:text-status-info-fg",
+          "border-l-brand [&_[data-slot=alert-icon]]:bg-brand-subtle [&_[data-slot=alert-icon]]:text-link",
+        info: "border-l-accent [&_[data-slot=alert-icon]]:bg-status-info-bg [&_[data-slot=alert-icon]]:text-status-info-fg",
         success:
-          "border-l-status-ontime-fg *:[svg]:text-status-ontime-fg",
+          "border-l-status-ontime-fg [&_[data-slot=alert-icon]]:bg-status-ontime-bg [&_[data-slot=alert-icon]]:text-status-ontime-fg",
         warning:
-          "border-l-status-delay-fg *:[svg]:text-status-delay-fg",
+          "border-l-status-delay-fg [&_[data-slot=alert-icon]]:bg-status-delay-bg [&_[data-slot=alert-icon]]:text-status-delay-fg",
         destructive:
-          "border-l-status-cancel-fg text-status-cancel-fg *:data-[slot=alert-description]:text-status-cancel-fg/90 *:[svg]:text-status-cancel-fg",
+          "border-l-status-cancel-fg [&_[data-slot=alert-icon]]:bg-status-cancel-bg [&_[data-slot=alert-icon]]:text-status-cancel-fg",
       },
     },
     defaultVariants: {
       variant: "default",
     },
-  }
-)
+  },
+);
 
 function Alert({
   className,
@@ -37,20 +38,50 @@ function Alert({
       className={cn(alertVariants({ variant }), className)}
       {...props}
     />
-  )
+  );
+}
+
+function AlertIcon({ className, ...props }: React.ComponentProps<"span">) {
+  return (
+    <span
+      data-slot="alert-icon"
+      className={cn(
+        "flex size-9 shrink-0 items-center justify-center rounded-md [&_svg]:size-5",
+        className,
+      )}
+      {...props}
+    />
+  );
+}
+
+function AlertContent({ className, ...props }: React.ComponentProps<"div">) {
+  return (
+    <div
+      data-slot="alert-content"
+      className={cn("min-w-0 flex-1", className)}
+      {...props}
+    />
+  );
+}
+
+function AlertHeader({ className, ...props }: React.ComponentProps<"div">) {
+  return (
+    <div
+      data-slot="alert-header"
+      className={cn("flex items-start justify-between gap-2", className)}
+      {...props}
+    />
+  );
 }
 
 function AlertTitle({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
       data-slot="alert-title"
-      className={cn(
-        "font-bold text-strong group-has-[>svg]/alert:col-start-2 [&_a]:underline [&_a]:underline-offset-3 [&_a]:hover:text-foreground",
-        className
-      )}
+      className={cn("text-sm font-bold text-strong", className)}
       {...props}
     />
-  )
+  );
 }
 
 function AlertDescription({
@@ -61,22 +92,62 @@ function AlertDescription({
     <div
       data-slot="alert-description"
       className={cn(
-        "text-sm text-balance text-muted-text md:text-pretty [&_a]:underline [&_a]:underline-offset-3 [&_a]:hover:text-foreground [&_p:not(:last-child)]:mb-4",
-        className
+        "mt-0.5 text-sm leading-snug text-muted-text [&_p]:leading-snug",
+        className,
       )}
       {...props}
     />
-  )
+  );
+}
+
+function AlertTime({ className, ...props }: React.ComponentProps<"span">) {
+  return (
+    <span
+      data-slot="alert-time"
+      className={cn(
+        "text-2xs shrink-0 whitespace-nowrap text-subtle",
+        className,
+      )}
+      {...props}
+    />
+  );
+}
+
+function AlertDismiss({ className, ...props }: React.ComponentProps<"button">) {
+  return (
+    <button
+      type="button"
+      data-slot="alert-dismiss"
+      aria-label="Dismiss"
+      className={cn(
+        "flex shrink-0 p-0.5 text-subtle transition-colors hover:text-strong",
+        className,
+      )}
+      {...props}
+    >
+      <X className="size-4" strokeWidth={2.2} />
+    </button>
+  );
 }
 
 function AlertAction({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
       data-slot="alert-action"
-      className={cn("absolute top-2 right-2", className)}
+      className={cn("shrink-0", className)}
       {...props}
     />
-  )
+  );
 }
 
-export { Alert, AlertTitle, AlertDescription, AlertAction }
+export {
+  Alert,
+  AlertAction,
+  AlertContent,
+  AlertDescription,
+  AlertDismiss,
+  AlertHeader,
+  AlertIcon,
+  AlertTime,
+  AlertTitle,
+};

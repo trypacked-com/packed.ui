@@ -1,39 +1,98 @@
-import * as React from "react"
-import { mergeProps } from "@base-ui/react/merge-props"
-import { useRender } from "@base-ui/react/use-render"
+import { mergeProps } from "@base-ui/react/merge-props";
+import { useRender } from "@base-ui/react/use-render";
+import type * as React from "react";
 
-import { cn } from "@/registry/lib/utils"
+import { cn } from "@/registry/lib/utils";
 
 function Card({
   className,
   size = "default",
+  padded = true,
   interactive = false,
   render,
   ...props
 }: useRender.ComponentProps<"div"> & {
-  size?: "default" | "sm"
-  interactive?: boolean
+  size?: "default" | "sm";
+  padded?: boolean;
+  interactive?: boolean;
 }) {
   return useRender({
     defaultTagName: "div",
     props: mergeProps<"div">(
       {
         className: cn(
-          "group/card flex flex-col gap-(--card-spacing) overflow-hidden rounded-lg border border-border-subtle bg-card py-(--card-spacing) text-sm text-card-foreground shadow-card [--card-spacing:--spacing(5)] has-data-[slot=card-footer]:pb-0 has-[>img:first-child]:pt-0 data-[size=sm]:gap-(--card-spacing) data-[size=sm]:[--card-spacing:--spacing(4)] data-[size=sm]:has-data-[slot=card-footer]:pb-0 *:[img:first-child]:rounded-t-lg *:[img:last-child]:rounded-b-lg",
+          "group/card flex flex-col overflow-hidden rounded-lg border border-border-subtle bg-card text-card-foreground shadow-card",
+          size === "sm"
+            ? "[--card-spacing:--spacing(4)]"
+            : "[--card-spacing:--spacing(5)]",
+          padded && "gap-(--card-spacing) p-(--card-spacing)",
           interactive &&
             "cursor-pointer transition-all duration-[var(--dur-base)] ease-[var(--ease-out)] hover:-translate-y-0.5 hover:shadow-card-hover motion-reduce:transition-none motion-reduce:hover:translate-y-0",
-          className
+          className,
         ),
       },
-      props
+      props,
     ),
     render,
     state: {
       slot: "card",
       size,
+      padded,
       interactive,
     },
-  })
+  });
+}
+
+function CardMedia({ className, ...props }: React.ComponentProps<"div">) {
+  return (
+    <div
+      data-slot="card-media"
+      className={cn(
+        "relative aspect-[4/3] w-full overflow-hidden bg-surface-sunken",
+        className,
+      )}
+      {...props}
+    />
+  );
+}
+
+function CardMediaOverlay({
+  className,
+  ...props
+}: React.ComponentProps<"div">) {
+  return (
+    <div
+      data-slot="card-media-overlay"
+      className={cn(
+        "absolute inset-0 flex flex-col justify-end bg-linear-to-t from-black/55 via-black/15 to-black/5 p-4",
+        className,
+      )}
+      {...props}
+    />
+  );
+}
+
+function CardMediaAction({ className, ...props }: React.ComponentProps<"div">) {
+  return (
+    <div
+      data-slot="card-media-action"
+      className={cn("absolute top-4 right-4 z-10", className)}
+      {...props}
+    />
+  );
+}
+
+function CardIcon({ className, ...props }: React.ComponentProps<"span">) {
+  return (
+    <span
+      data-slot="card-icon"
+      className={cn(
+        "flex size-10 shrink-0 items-center justify-center rounded-md bg-brand-subtle text-brand [&_svg]:size-5",
+        className,
+      )}
+      {...props}
+    />
+  );
 }
 
 function CardHeader({ className, ...props }: React.ComponentProps<"div">) {
@@ -41,12 +100,13 @@ function CardHeader({ className, ...props }: React.ComponentProps<"div">) {
     <div
       data-slot="card-header"
       className={cn(
-        "group/card-header @container/card-header grid auto-rows-min items-start gap-1.5 rounded-t-lg px-(--card-spacing) has-data-[slot=card-action]:grid-cols-[1fr_auto] has-data-[slot=card-description]:grid-rows-[auto_auto] [.border-b]:pb-(--card-spacing)",
-        className
+        "@container/card-header grid auto-rows-min grid-rows-[auto_auto] items-start gap-1.5 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-(--card-spacing)",
+        "group-data-[padded=false]/card:px-(--card-spacing) group-data-[padded=false]/card:pt-(--card-spacing)",
+        className,
       )}
       {...props}
     />
-  )
+  );
 }
 
 function CardTitle({ className, ...props }: React.ComponentProps<"div">) {
@@ -55,11 +115,11 @@ function CardTitle({ className, ...props }: React.ComponentProps<"div">) {
       data-slot="card-title"
       className={cn(
         "font-semibold leading-none text-strong group-data-[size=sm]/card:text-sm",
-        className
+        className,
       )}
       {...props}
     />
-  )
+  );
 }
 
 function CardDescription({ className, ...props }: React.ComponentProps<"div">) {
@@ -69,7 +129,7 @@ function CardDescription({ className, ...props }: React.ComponentProps<"div">) {
       className={cn("text-sm text-muted-text", className)}
       {...props}
     />
-  )
+  );
 }
 
 function CardAction({ className, ...props }: React.ComponentProps<"div">) {
@@ -78,21 +138,34 @@ function CardAction({ className, ...props }: React.ComponentProps<"div">) {
       data-slot="card-action"
       className={cn(
         "col-start-2 row-span-2 row-start-1 self-start justify-self-end",
-        className
+        className,
       )}
       {...props}
     />
-  )
+  );
+}
+
+function CardMeta({ className, ...props }: React.ComponentProps<"div">) {
+  return (
+    <div
+      data-slot="card-meta"
+      className={cn(
+        "flex flex-wrap items-center gap-3 text-sm text-muted-text",
+        className,
+      )}
+      {...props}
+    />
+  );
 }
 
 function CardContent({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
       data-slot="card-content"
-      className={cn("px-(--card-spacing)", className)}
+      className={cn("group-data-[padded=false]/card:px-(--card-spacing)", className)}
       {...props}
     />
-  )
+  );
 }
 
 function CardFooter({ className, ...props }: React.ComponentProps<"div">) {
@@ -100,20 +173,27 @@ function CardFooter({ className, ...props }: React.ComponentProps<"div">) {
     <div
       data-slot="card-footer"
       className={cn(
-        "flex items-center gap-2 rounded-b-lg border-t border-border-subtle p-(--card-spacing)",
-        className
+        "flex items-center gap-2 border-t border-border-subtle",
+        "group-data-[padded=true]/card:-mx-(--card-spacing) group-data-[padded=true]/card:px-(--card-spacing) group-data-[padded=true]/card:pt-4",
+        "group-data-[padded=false]/card:mx-(--card-spacing) group-data-[padded=false]/card:px-0 group-data-[padded=false]/card:py-4",
+        className,
       )}
       {...props}
     />
-  )
+  );
 }
 
 export {
   Card,
-  CardHeader,
-  CardFooter,
-  CardTitle,
   CardAction,
-  CardDescription,
   CardContent,
-}
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardIcon,
+  CardMedia,
+  CardMediaAction,
+  CardMediaOverlay,
+  CardMeta,
+  CardTitle,
+};
