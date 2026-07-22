@@ -5,32 +5,32 @@
   </picture>
 </p>
 
-<h1 align="center">Packed.ui</h1>
+<h1 align="center">packed.ui</h1>
 
 <p align="center">
   shadcn-compatible component registry.<br>
-  warm sand, sunset orange, soft shadows.
+  Warm sand, sunset orange, soft shadows.
 </p>
 
 <p align="center">
-  <a href="https://ui.trypacked.dev/">docs</a>
+  <a href="https://ui.trypacked.dev/">Docs</a>
   ·
   <a href="https://ui.trypacked.dev/registry.json">registry.json</a>
   ·
-  <a href="https://github.com/trypacked-com/skills">design system (skills)</a>
+  <a href="https://github.com/trypacked-com/skills">Design system (skills)</a>
 </p>
 
 ---
 
-## what this is
+## What this is
 
-we ship UI as static JSON. install components with the shadcn CLI — same workflow, different defaults.
+We ship UI as static JSON. Install components with the shadcn CLI — same workflow, different defaults.
 
-50 components. Lora headlines, Figtree UI, DM Mono for codes and times. warm-tinted elevation, rounded corners, no cool grey. tokens live in `registry/styles/packed-theme-tokens.css`; rules in `AGENTS.md`.
+50 components. Lora headlines, Figtree UI, DM Mono for codes and times. Warm-tinted elevation, rounded corners, no cool grey. Tokens live in `registry/styles/packed-theme-tokens.css`; rules in `AGENTS.md`.
 
-## install
+## Install
 
-add the registry to `components.json`:
+Add the registry to `components.json`:
 
 ```json
 "registries": {
@@ -38,7 +38,7 @@ add the registry to `components.json`:
 }
 ```
 
-pull **@packed/theme first**, then components. use the `@packed/<name>` namespace on the CLI — registry manifests declare namespaced `registryDependencies` (e.g. `@packed/button`, not bare `button`), so the resolver stays on `ui.trypacked.dev` instead of `ui.shadcn.com`.
+Pull **@packed/theme first**, then components. Use the `@packed/<name>` namespace on the CLI — registry manifests declare namespaced `registryDependencies` (e.g. `@packed/button`, not bare `button`), so the resolver stays on `ui.trypacked.dev` instead of `ui.shadcn.com`.
 
 ```bash
 bunx shadcn@latest add @packed/theme
@@ -46,11 +46,11 @@ bunx shadcn@latest add @packed/button
 bunx shadcn@latest add @packed/theme-provider
 ```
 
-theme ships Lora, Figtree, and DM Mono via `@fontsource` imports in CSS (not `registry:font` / Google provider — that breaks Tailwind v4 consumers on `shadcn add`). the CLI adds `@fontsource/lora`, `@fontsource-variable/figtree`, and `@fontsource/dm-mono` with the theme. **Vite (and other non-Next) apps** must keep those packages in `package.json` if you merge theme CSS into `src/index.css`; Next apps same unless you wire fonts another way.
+Theme ships Lora, Figtree, and DM Mono via `@fontsource` imports in CSS (not `registry:font` / Google provider — that breaks Tailwind v4 consumers on `shadcn add`). The CLI adds `@fontsource/lora`, `@fontsource-variable/figtree`, and `@fontsource/dm-mono` with the theme. **Vite (and other non-Next) apps** must keep those packages in `package.json` if you merge theme CSS into `src/index.css`; Next apps same unless you wire fonts another way.
 
-full catalog: [ui.trypacked.dev](https://ui.trypacked.dev/)
+Full catalog: [ui.trypacked.dev](https://ui.trypacked.dev/)
 
-## development
+## Development
 
 ```bash
 bun install
@@ -60,18 +60,18 @@ bun run build        # registry + next build
 bun run test:visual  # playwright snapshots
 ```
 
-## add a component
+## Add a component
 
-1. source in `registry/ui`
-2. register in `registry.json`
+1. Source in `registry/ui`
+2. Register in `registry.json`
 3. `bun run build:registry`
-4. stories in `stories/`
-5. docs route in `app/(docs)/components/[slug]/page.tsx`
-6. visual + build checks
+4. Stories in `stories/`
+5. Docs route in `app/(docs)/components/[slug]/page.tsx`
+6. Visual + build checks
 
-match Storybook stories and the rules in `AGENTS.md`.
+Match Storybook stories and the rules in `AGENTS.md`.
 
-## agent skills
+## Agent skills
 
 All skills: [packed.skills](https://github.com/trypacked-com/skills)
 
