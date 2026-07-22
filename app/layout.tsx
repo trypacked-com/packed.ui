@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-import { ThemeProvider, themeInitScript  } from "@/registry/lib/theme-provider";
+import { ThemeProvider, themeInitScript } from "@/registry/lib/theme-provider";
 
 import "./globals.css";
 
@@ -16,8 +16,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="h-full font-sans antialiased" suppressHydrationWarning>
+    <html
+      lang="en"
+      className="h-full font-sans antialiased"
+      suppressHydrationWarning
+    >
       <head>
+        {/* biome-ignore lint/security/noDangerouslySetInnerHtml: static theme bootstrap, not user content */}
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
       </head>
       <body className="flex min-h-full flex-col">
@@ -26,4 +31,3 @@ export default function RootLayout({
     </html>
   );
 }
-
