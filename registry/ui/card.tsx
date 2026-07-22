@@ -162,7 +162,10 @@ function CardContent({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
       data-slot="card-content"
-      className={cn("group-data-[padded=false]/card:px-(--card-spacing)", className)}
+      className={cn(
+        "group-data-[padded=false]/card:px-(--card-spacing)",
+        className,
+      )}
       {...props}
     />
   );

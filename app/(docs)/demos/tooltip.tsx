@@ -12,7 +12,9 @@ export default function TooltipDemo() {
   return (
     <TooltipProvider>
       <Tooltip>
-        <TooltipTrigger render={<Button variant="outline" />}>Gate info</TooltipTrigger>
+        <TooltipTrigger render={<Button variant="outline" />}>
+          Gate info
+        </TooltipTrigger>
         <TooltipContent>
           Gate <span className="font-mono">B7</span> — Terminal 2, north wing
         </TooltipContent>

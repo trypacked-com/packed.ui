@@ -3,13 +3,8 @@
   "type": "registry:ui",
   "title": "Dropdown Menu",
   "description": "Packed Dropdown Menu — warm, token-driven UI on sand surfaces.",
-  "dependencies": [
-    "@base-ui/react",
-    "lucide-react"
-  ],
-  "registryDependencies": [
-    "@packed/utils"
-  ],
+  "dependencies": ["@base-ui/react", "lucide-react"],
+  "registryDependencies": ["@packed/utils"],
   "files": [
     {
       "path": "registry/ui/dropdown-menu.tsx",

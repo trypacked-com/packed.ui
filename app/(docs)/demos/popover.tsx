@@ -13,7 +13,9 @@ import {
 export default function PopoverDemo() {
   return (
     <Popover>
-      <PopoverTrigger render={<Button variant="outline" />}>Seat info</PopoverTrigger>
+      <PopoverTrigger render={<Button variant="outline" />}>
+        Seat info
+      </PopoverTrigger>
       <PopoverContent>
         <PopoverHeader>
           <PopoverTitle>

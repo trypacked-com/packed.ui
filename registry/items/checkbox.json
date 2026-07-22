@@ -3,13 +3,8 @@
   "type": "registry:ui",
   "title": "Checkbox",
   "description": "Checkbox with label. Controlled.",
-  "dependencies": [
-    "@base-ui/react",
-    "lucide-react"
-  ],
-  "registryDependencies": [
-    "@packed/utils"
-  ],
+  "dependencies": ["@base-ui/react", "lucide-react"],
+  "registryDependencies": ["@packed/utils"],
   "files": [
     {
       "path": "registry/ui/checkbox.tsx",

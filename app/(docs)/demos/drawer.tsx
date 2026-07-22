@@ -13,7 +13,9 @@ import {
 export default function DrawerDemo() {
   return (
     <Drawer>
-      <DrawerTrigger render={<Button variant="outline" />}>Flight updates</DrawerTrigger>
+      <DrawerTrigger render={<Button variant="outline" />}>
+        Flight updates
+      </DrawerTrigger>
       <DrawerContent>
         <DrawerHeader>
           <DrawerTitle>Gate change</DrawerTitle>

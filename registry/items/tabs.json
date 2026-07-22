@@ -3,13 +3,8 @@
   "type": "registry:ui",
   "title": "Tabs",
   "description": "Underline tab bar with optional icons and counts. Controlled via `value` + `onChange`.",
-  "dependencies": [
-    "@base-ui/react",
-    "class-variance-authority"
-  ],
-  "registryDependencies": [
-    "@packed/utils"
-  ],
+  "dependencies": ["@base-ui/react", "class-variance-authority"],
+  "registryDependencies": ["@packed/utils"],
   "files": [
     {
       "path": "registry/ui/tabs.tsx",

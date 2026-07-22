@@ -3,12 +3,8 @@
   "type": "registry:ui",
   "title": "Avatar",
   "description": "Round avatar with image or coloured-initials fallback.",
-  "dependencies": [
-    "@base-ui/react"
-  ],
-  "registryDependencies": [
-    "@packed/utils"
-  ],
+  "dependencies": ["@base-ui/react"],
+  "registryDependencies": ["@packed/utils"],
   "files": [
     {
       "path": "registry/ui/avatar.tsx",

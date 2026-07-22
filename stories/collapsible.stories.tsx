@@ -22,9 +22,7 @@ export const Default: Story = {
   render: () => (
     <Collapsible className="w-full max-w-md">
       <CollapsibleTrigger
-        render={
-          <Button variant="outline" className="w-full justify-between" />
-        }
+        render={<Button variant="outline" className="w-full justify-between" />}
       >
         Gate details
         <ChevronDownIcon className="size-4" />

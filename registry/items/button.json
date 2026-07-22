@@ -3,13 +3,8 @@
   "type": "registry:ui",
   "title": "Button",
   "description": "Packed's primary action button — warm, rounded, with a soft brand glow on the primary variant. Use for the single most important action in a view.",
-  "dependencies": [
-    "@base-ui/react",
-    "class-variance-authority"
-  ],
-  "registryDependencies": [
-    "@packed/utils"
-  ],
+  "dependencies": ["@base-ui/react", "class-variance-authority"],
+  "registryDependencies": ["@packed/utils"],
   "files": [
     {
       "path": "registry/ui/button.tsx",

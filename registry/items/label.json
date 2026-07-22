@@ -4,9 +4,7 @@
   "title": "Label",
   "description": "Packed Label — warm, token-driven UI on sand surfaces.",
   "dependencies": [],
-  "registryDependencies": [
-    "@packed/utils"
-  ],
+  "registryDependencies": ["@packed/utils"],
   "files": [
     {
       "path": "registry/ui/label.tsx",

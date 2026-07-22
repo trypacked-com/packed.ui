@@ -3,12 +3,8 @@
   "type": "registry:ui",
   "title": "Scroll Area",
   "description": "Packed Scroll Area — warm, token-driven UI on sand surfaces.",
-  "dependencies": [
-    "@base-ui/react"
-  ],
-  "registryDependencies": [
-    "@packed/utils"
-  ],
+  "dependencies": ["@base-ui/react"],
+  "registryDependencies": ["@packed/utils"],
   "files": [
     {
       "path": "registry/ui/scroll-area.tsx",

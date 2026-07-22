@@ -3,14 +3,8 @@
   "type": "registry:ui",
   "title": "Button Group",
   "description": "Packed Button Group — warm, token-driven UI on sand surfaces.",
-  "dependencies": [
-    "@base-ui/react",
-    "class-variance-authority"
-  ],
-  "registryDependencies": [
-    "@packed/separator",
-    "@packed/utils"
-  ],
+  "dependencies": ["@base-ui/react", "class-variance-authority"],
+  "registryDependencies": ["@packed/separator", "@packed/utils"],
   "files": [
     {
       "path": "registry/ui/button-group.tsx",

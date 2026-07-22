@@ -13,7 +13,9 @@ import {
 export default function SheetDemo() {
   return (
     <Sheet>
-      <SheetTrigger render={<Button variant="outline" />}>Trip details</SheetTrigger>
+      <SheetTrigger render={<Button variant="outline" />}>
+        Trip details
+      </SheetTrigger>
       <SheetContent>
         <SheetHeader>
           <SheetTitle>Lisbon trip</SheetTitle>

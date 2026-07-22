@@ -8,9 +8,7 @@
     "class-variance-authority",
     "lucide-react"
   ],
-  "registryDependencies": [
-    "@packed/utils"
-  ],
+  "registryDependencies": ["@packed/utils"],
   "files": [
     {
       "path": "registry/ui/navigation-menu.tsx",

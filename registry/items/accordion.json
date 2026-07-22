@@ -3,13 +3,8 @@
   "type": "registry:ui",
   "title": "Accordion",
   "description": "Packed Accordion — warm, token-driven UI on sand surfaces.",
-  "dependencies": [
-    "@base-ui/react",
-    "lucide-react"
-  ],
-  "registryDependencies": [
-    "@packed/utils"
-  ],
+  "dependencies": ["@base-ui/react", "lucide-react"],
+  "registryDependencies": ["@packed/utils"],
   "files": [
     {
       "path": "registry/ui/accordion.tsx",

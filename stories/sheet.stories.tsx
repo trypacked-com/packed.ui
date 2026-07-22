@@ -28,7 +28,9 @@ export const Default: Story = {
 export const Left: Story = {
   render: () => (
     <Sheet>
-      <SheetTrigger render={<Button variant="outline" />}>Boarding pass</SheetTrigger>
+      <SheetTrigger render={<Button variant="outline" />}>
+        Boarding pass
+      </SheetTrigger>
       <SheetContent side="left">
         <SheetHeader>
           <SheetTitle>

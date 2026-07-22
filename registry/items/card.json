@@ -3,12 +3,8 @@
   "type": "registry:ui",
   "title": "Card",
   "description": "The warm surface container — Packed's workhorse layout primitive. White surface, soft border, generous radius.",
-  "dependencies": [
-    "@base-ui/react"
-  ],
-  "registryDependencies": [
-    "@packed/utils"
-  ],
+  "dependencies": ["@base-ui/react"],
+  "registryDependencies": ["@packed/utils"],
   "files": [
     {
       "path": "registry/ui/card.tsx",

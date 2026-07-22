@@ -3,13 +3,8 @@
   "type": "registry:ui",
   "title": "Alert Dialog",
   "description": "Packed Alert Dialog — warm, token-driven UI on sand surfaces.",
-  "dependencies": [
-    "@base-ui/react"
-  ],
-  "registryDependencies": [
-    "@packed/button",
-    "@packed/utils"
-  ],
+  "dependencies": ["@base-ui/react"],
+  "registryDependencies": ["@packed/button", "@packed/utils"],
   "files": [
     {
       "path": "registry/ui/alert-dialog.tsx",

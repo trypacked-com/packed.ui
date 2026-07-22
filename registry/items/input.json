@@ -3,12 +3,8 @@
   "type": "registry:ui",
   "title": "Input",
   "description": "Text field with label, helper text, error state, and optional leading/trailing icons. Focus shows a warm brand ring.",
-  "dependencies": [
-    "@base-ui/react"
-  ],
-  "registryDependencies": [
-    "@packed/utils"
-  ],
+  "dependencies": ["@base-ui/react"],
+  "registryDependencies": ["@packed/utils"],
   "files": [
     {
       "path": "registry/ui/input.tsx",

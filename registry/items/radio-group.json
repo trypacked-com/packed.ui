@@ -3,13 +3,8 @@
   "type": "registry:ui",
   "title": "Radio Group",
   "description": "Packed Radio Group — warm, token-driven UI on sand surfaces.",
-  "dependencies": [
-    "@base-ui/react",
-    "lucide-react"
-  ],
-  "registryDependencies": [
-    "@packed/utils"
-  ],
+  "dependencies": ["@base-ui/react", "lucide-react"],
+  "registryDependencies": ["@packed/utils"],
   "files": [
     {
       "path": "registry/ui/radio-group.tsx",

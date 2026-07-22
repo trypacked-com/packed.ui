@@ -3,13 +3,8 @@
   "type": "registry:ui",
   "title": "Badge",
   "description": "Compact pill label for statuses, counts and categories. Use success, info, warning, danger, and neutral for status dots.",
-  "dependencies": [
-    "@base-ui/react",
-    "class-variance-authority"
-  ],
-  "registryDependencies": [
-    "@packed/utils"
-  ],
+  "dependencies": ["@base-ui/react", "class-variance-authority"],
+  "registryDependencies": ["@packed/utils"],
   "files": [
     {
       "path": "registry/ui/badge.tsx",
