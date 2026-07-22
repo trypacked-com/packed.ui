@@ -31,9 +31,7 @@ export const Default: Story = {
 export const Small: Story = {
   render: () => (
     <AlertDialog>
-      <AlertDialogTrigger asChild>
-        <Button variant="outline">Leave trip</Button>
-      </AlertDialogTrigger>
+      <AlertDialogTrigger render={<Button variant="outline" />}>Leave trip</AlertDialogTrigger>
       <AlertDialogContent size="sm">
         <AlertDialogHeader>
           <AlertDialogTitle>Leave this trip?</AlertDialogTitle>

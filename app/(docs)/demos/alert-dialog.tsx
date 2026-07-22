@@ -16,9 +16,7 @@ import { Button } from "@/registry/ui/button";
 export default function AlertDialogDemo() {
   return (
     <AlertDialog>
-      <AlertDialogTrigger asChild>
-        <Button variant="destructive">Remove trip</Button>
-      </AlertDialogTrigger>
+      <AlertDialogTrigger render={<Button variant="destructive" />}>Remove trip</AlertDialogTrigger>
       <AlertDialogContent>
         <AlertDialogHeader>
           <AlertDialogTitle>Remove this trip?</AlertDialogTitle>
