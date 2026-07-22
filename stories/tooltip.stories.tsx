@@ -32,9 +32,9 @@ export const Default: Story = {
 
 export const Delayed: Story = {
   render: () => (
-    <Tooltip delayDuration={400}>
-      <TooltipTrigger asChild>
-        <Button variant="ghost">Departure time</Button>
+    <Tooltip>
+      <TooltipTrigger delay={400} render={<Button variant="ghost" />}>
+        Departure time
       </TooltipTrigger>
       <TooltipContent>
         Scheduled <span className="font-mono">08:45</span> local time

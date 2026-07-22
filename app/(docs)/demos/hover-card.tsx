@@ -9,11 +9,12 @@ import {
 
 export default function HoverCardDemo() {
   return (
-    <HoverCard openDelay={200}>
-      <HoverCardTrigger asChild>
-        <Button variant="link" className="font-mono">
-          TP1234
-        </Button>
+    <HoverCard>
+      <HoverCardTrigger
+        delay={200}
+        render={<Button variant="link" className="font-mono" />}
+      >
+        TP1234
       </HoverCardTrigger>
       <HoverCardContent>
         <p className="text-sm font-medium">Lisbon · On time</p>

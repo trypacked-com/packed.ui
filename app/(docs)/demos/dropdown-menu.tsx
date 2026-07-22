@@ -19,11 +19,9 @@ import {
 export default function DropdownMenuDemo() {
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button variant="outline" size="icon">
-          <MoreHorizontalIcon />
-          <span className="sr-only">Trip actions</span>
-        </Button>
+      <DropdownMenuTrigger render={<Button variant="outline" size="icon" />}>
+        <MoreHorizontalIcon />
+        <span className="sr-only">Trip actions</span>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
         <DropdownMenuItem>
