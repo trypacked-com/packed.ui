@@ -39,26 +39,28 @@ export default function DatePickerDemo() {
       <Field>
         <FieldLabel>Trip dates</FieldLabel>
         <Popover>
-          <PopoverTrigger asChild>
-            <Button
-              variant="outline"
-              data-empty={!range?.from}
-              className="w-full justify-start font-normal data-[empty=true]:text-muted-text"
-            >
-              <CalendarIcon />
-              {range?.from ? (
-                range.to ? (
-                  <>
-                    {format(range.from, "LLL dd, y")} –{" "}
-                    {format(range.to, "LLL dd, y")}
-                  </>
-                ) : (
-                  format(range.from, "LLL dd, y")
-                )
+          <PopoverTrigger
+            render={
+              <Button
+                variant="outline"
+                data-empty={!range?.from}
+                className="w-full justify-start font-normal data-[empty=true]:text-muted-text"
+              />
+            }
+          >
+            <CalendarIcon />
+            {range?.from ? (
+              range.to ? (
+                <>
+                  {format(range.from, "LLL dd, y")} –{" "}
+                  {format(range.to, "LLL dd, y")}
+                </>
               ) : (
-                <span>Pick a date range</span>
-              )}
-            </Button>
+                format(range.from, "LLL dd, y")
+              )
+            ) : (
+              <span>Pick a date range</span>
+            )}
           </PopoverTrigger>
           <PopoverContent className="w-auto p-0" align="start">
             <Calendar
