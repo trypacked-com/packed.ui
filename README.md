@@ -1,36 +1,84 @@
-<h1>
-  <img src="public/packed-mark.svg" alt="Packed" width="40" height="40" valign="middle" />
-  packed.ui
-</h1>
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="public/packed-mark-white.svg">
+    <img src="public/packed-mark.svg" alt="Packed" height="56">
+  </picture>
+</p>
 
-The Packed design system as a standalone [shadcn](https://ui.shadcn.com)
-registry — warm, sunset-led React components (cream + orange, Lora / Figtree /
-DM Mono). Docs and previews: **[ui.trypacked.dev](https://ui.trypacked.dev/)**.
+<h1 align="center">packed.ui</h1>
 
-## Use a component
+<p align="center">
+  shadcn-compatible component registry.<br>
+  warm sand, sunset orange, soft shadows.
+</p>
 
-```bash
-bunx shadcn@latest add https://ui.trypacked.dev/r/button.json
+<p align="center">
+  <a href="https://ui.trypacked.dev/">docs</a>
+  ·
+  <a href="https://ui.trypacked.dev/registry.json">registry.json</a>
+  ·
+  <a href="https://github.com/trypacked-com/skills">design system (skills)</a>
+</p>
+
+---
+
+## what this is
+
+we ship UI as static JSON. install components with the shadcn CLI — same workflow, different defaults.
+
+50 components. Lora headlines, Figtree UI, DM Mono for codes and times. warm-tinted elevation, rounded corners, no cool grey. tokens live in `registry/styles/packed-theme-tokens.css`; rules in `AGENTS.md`.
+
+## install
+
+add the registry to `components.json`:
+
+```json
+"registries": {
+  "@packed": "https://ui.trypacked.dev/r/{name}.json"
+}
 ```
 
-Components land in `components/ui/` and resolve their dependencies (including
-the `cn()` helper) automatically. **48 components** are available — browse the
-full list at [ui.trypacked.dev](https://ui.trypacked.dev/) or in
-`registry.json` (`accordion`, `alert`, `button`, `card`, `dialog`, `form`,
-`sidebar`, `table`, …).
+pull **@packed/theme first**, then components. use the `@packed/<name>` namespace on the CLI — registry manifests declare namespaced `registryDependencies` (e.g. `@packed/button`, not bare `button`), so the resolver stays on `ui.trypacked.dev` instead of `ui.shadcn.com`.
 
-## Add a new component
+```bash
+bunx shadcn@latest add @packed/theme
+bunx shadcn@latest add @packed/button
+bunx shadcn@latest add @packed/theme-provider
+```
 
-Drop the source in `registry/ui/<name>.tsx` (use `cn` from
-`@/registry/lib/utils`, CVA for variants, semantic tokens only — never arbitrary
-Tailwind values), add `app/(docs)/demos/<name>.tsx` and
-`stories/<name>.stories.tsx`, then add a manifest in `registry/items/<name>.json`
-(or register directly in `registry.json`). Run `bun run storybook` to iterate,
-`bun run test:visual:update` to capture baselines, and `bun run build:registry`
-to emit `public/r/<name>.json`. Push to `main` and GitHub Actions publishes the
-docs + registry.
+theme ships Lora, Figtree, and DM Mono via `@fontsource` imports in CSS (not `registry:font` / Google provider — that breaks Tailwind v4 consumers on `shadcn add`). the CLI adds `@fontsource/lora`, `@fontsource-variable/figtree`, and `@fontsource/dm-mono` with the theme. **Vite (and other non-Next) apps** must keep those packages in `package.json` if you merge theme CSS into `src/index.css`; Next apps same unless you wire fonts another way.
 
-## Scripts
+full catalog: [ui.trypacked.dev](https://ui.trypacked.dev/)
 
-`bun run dev` · `bun run storybook` · `bun run build` · `bun run test:visual` ·
-`bun run lint`
+## development
+
+```bash
+bun install
+bun run dev          # docs site
+bun run storybook    # component stories
+bun run build        # registry + next build
+bun run test:visual  # playwright snapshots
+```
+
+## add a component
+
+1. source in `registry/ui`
+2. register in `registry.json`
+3. `bun run build:registry`
+4. stories in `stories/`
+5. docs route in `app/(docs)/components/[slug]/page.tsx`
+6. visual + build checks
+
+match Storybook stories and the rules in `AGENTS.md`.
+
+## agent skills
+
+All skills: [packed.skills](https://github.com/trypacked-com/skills)
+
+```bash
+# this repo
+bunx skills add trypacked-com/skills --skill packed-ui-maintainer --skill packed-design -a cursor -a claude-code -y
+
+# consumer app
+bunx skills add trypacked-com/skills --skill packed-ui --skill packed-design -a cursor -a claude-code -y
+```
