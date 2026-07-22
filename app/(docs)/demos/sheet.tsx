@@ -13,8 +13,8 @@ import {
 export default function SheetDemo() {
   return (
     <Sheet>
-      <SheetTrigger asChild>
-        <Button variant="outline">Trip details</Button>
+      <SheetTrigger render={<Button variant="outline" />}>
+        Trip details
       </SheetTrigger>
       <SheetContent>
         <SheetHeader>

@@ -3,7 +3,7 @@
   "type": "registry:ui",
   "title": "Select",
   "description": "Native select styled to match Input, with a custom chevron.",
-  "dependencies": ["lucide-react", "radix-ui"],
+  "dependencies": ["@base-ui/react", "lucide-react"],
   "registryDependencies": ["@packed/utils"],
   "files": [
     {

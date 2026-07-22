@@ -17,7 +17,7 @@ type DatePickerProps = {
   disabled?: boolean;
 } & Pick<
   React.ComponentProps<typeof Calendar>,
-  "captionLayout" | "fromDate" | "toDate"
+  "captionLayout" | "startMonth" | "endMonth"
 >;
 
 function DatePicker({
@@ -27,26 +27,28 @@ function DatePicker({
   className,
   disabled,
   captionLayout,
-  fromDate,
-  toDate,
+  startMonth,
+  endMonth,
 }: DatePickerProps) {
   const [open, setOpen] = React.useState(false);
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
-      <PopoverTrigger asChild>
-        <Button
-          variant="outline"
-          disabled={disabled}
-          data-empty={!date}
-          className={cn(
-            "w-56 justify-start font-normal data-[empty=true]:text-muted-text",
-            className,
-          )}
-        >
-          <CalendarIcon />
-          {date ? format(date, "PPP") : <span>{placeholder}</span>}
-        </Button>
+      <PopoverTrigger
+        disabled={disabled}
+        render={
+          <Button
+            variant="outline"
+            data-empty={!date}
+            className={cn(
+              "w-56 justify-start font-normal data-[empty=true]:text-muted-text",
+              className,
+            )}
+          />
+        }
+      >
+        <CalendarIcon />
+        {date ? format(date, "PPP") : <span>{placeholder}</span>}
       </PopoverTrigger>
       <PopoverContent className="w-auto p-0" align="start">
         <Calendar
@@ -54,8 +56,8 @@ function DatePicker({
           selected={date}
           defaultMonth={date}
           captionLayout={captionLayout}
-          fromDate={fromDate}
-          toDate={toDate}
+          startMonth={startMonth}
+          endMonth={endMonth}
           onSelect={(nextDate) => {
             onDateChange?.(nextDate);
             setOpen(false);

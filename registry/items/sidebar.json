@@ -3,7 +3,11 @@
   "type": "registry:ui",
   "title": "Sidebar",
   "description": "Packed Sidebar — warm, token-driven UI on sand surfaces.",
-  "dependencies": ["class-variance-authority", "lucide-react", "radix-ui"],
+  "dependencies": [
+    "@base-ui/react",
+    "class-variance-authority",
+    "lucide-react"
+  ],
   "registryDependencies": [
     "@packed/button",
     "@packed/input",

@@ -16,9 +16,7 @@ import { Label } from "@/registry/ui/label";
 export default function DialogDemo() {
   return (
     <Dialog>
-      <DialogTrigger asChild>
-        <Button>Add flight</Button>
-      </DialogTrigger>
+      <DialogTrigger render={<Button />}>Add flight</DialogTrigger>
       <DialogContent>
         <DialogHeader>
           <DialogTitle>Add a flight</DialogTitle>

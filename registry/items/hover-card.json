@@ -3,7 +3,7 @@
   "type": "registry:ui",
   "title": "Hover Card",
   "description": "Packed Hover Card — warm, token-driven UI on sand surfaces.",
-  "dependencies": ["radix-ui"],
+  "dependencies": ["@base-ui/react"],
   "registryDependencies": ["@packed/utils"],
   "files": [
     {

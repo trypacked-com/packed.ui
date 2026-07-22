@@ -20,6 +20,7 @@ function InputOTP({
         "flex items-center gap-2 has-disabled:opacity-50",
         containerClassName,
       )}
+      spellCheck={false}
       className={cn("disabled:cursor-not-allowed", className)}
       {...props}
     />
@@ -30,7 +31,10 @@ function InputOTPGroup({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
       data-slot="input-otp-group"
-      className={cn("flex items-center", className)}
+      className={cn(
+        "flex items-center rounded-lg has-aria-invalid:border-destructive has-aria-invalid:ring-[3px] has-aria-invalid:ring-destructive/20 dark:has-aria-invalid:ring-destructive/40",
+        className,
+      )}
       {...props}
     />
   );
@@ -68,7 +72,12 @@ function InputOTPSlot({
 
 function InputOTPSeparator({ ...props }: React.ComponentProps<"div">) {
   return (
-    <div data-slot="input-otp-separator" role="separator" {...props}>
+    <div
+      data-slot="input-otp-separator"
+      className="flex items-center [&_svg:not([class*='size-'])]:size-4"
+      role="separator"
+      {...props}
+    >
       <MinusIcon />
     </div>
   );

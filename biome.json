@@ -12,6 +12,8 @@
       "!playwright-report",
       "!public",
       "!registry.json",
+      "!.migration-ref",
+      "!.worktrees",
       "!**/*.css"
     ]
   },
@@ -35,7 +37,9 @@
             "useSemanticElements": "off",
             "useFocusableInteractive": "off",
             "useKeyWithClickEvents": "off",
-            "useAriaPropsForRole": "off"
+            "useAriaPropsForRole": "off",
+            "noLabelWithoutControl": "off",
+            "noRedundantRoles": "off"
           },
           "suspicious": {
             "noDocumentCookie": "off",

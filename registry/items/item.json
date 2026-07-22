@@ -3,7 +3,7 @@
   "type": "registry:ui",
   "title": "Item",
   "description": "Packed Item — warm, token-driven UI on sand surfaces.",
-  "dependencies": ["class-variance-authority", "radix-ui"],
+  "dependencies": ["@base-ui/react", "class-variance-authority"],
   "registryDependencies": ["@packed/separator", "@packed/utils"],
   "files": [
     {

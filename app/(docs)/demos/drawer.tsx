@@ -13,8 +13,8 @@ import {
 export default function DrawerDemo() {
   return (
     <Drawer>
-      <DrawerTrigger asChild>
-        <Button variant="outline">Flight updates</Button>
+      <DrawerTrigger render={<Button variant="outline" />}>
+        Flight updates
       </DrawerTrigger>
       <DrawerContent>
         <DrawerHeader>

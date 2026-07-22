@@ -9,8 +9,8 @@
       "title": "Accordion",
       "description": "Packed Accordion — warm, token-driven UI on sand surfaces.",
       "dependencies": [
-        "lucide-react",
-        "radix-ui"
+        "@base-ui/react",
+        "lucide-react"
       ],
       "registryDependencies": [
         "@packed/utils"
@@ -49,7 +49,7 @@
       "title": "Alert Dialog",
       "description": "Packed Alert Dialog — warm, token-driven UI on sand surfaces.",
       "dependencies": [
-        "radix-ui"
+        "@base-ui/react"
       ],
       "registryDependencies": [
         "@packed/button",
@@ -69,7 +69,7 @@
       "title": "Avatar",
       "description": "Round avatar with image or coloured-initials fallback.",
       "dependencies": [
-        "radix-ui"
+        "@base-ui/react"
       ],
       "registryDependencies": [
         "@packed/utils"
@@ -88,8 +88,8 @@
       "title": "Badge",
       "description": "Compact pill label for statuses, counts and categories. Use success, info, warning, danger, and neutral for status dots.",
       "dependencies": [
-        "class-variance-authority",
-        "radix-ui"
+        "@base-ui/react",
+        "class-variance-authority"
       ],
       "registryDependencies": [
         "@packed/utils"
@@ -108,8 +108,8 @@
       "title": "Breadcrumb",
       "description": "Packed Breadcrumb — warm, token-driven UI on sand surfaces.",
       "dependencies": [
-        "lucide-react",
-        "radix-ui"
+        "@base-ui/react",
+        "lucide-react"
       ],
       "registryDependencies": [
         "@packed/utils"
@@ -128,8 +128,8 @@
       "title": "Button",
       "description": "Packed's primary action button — warm, rounded, with a soft brand glow on the primary variant. Use for the single most important action in a view.",
       "dependencies": [
-        "class-variance-authority",
-        "radix-ui"
+        "@base-ui/react",
+        "class-variance-authority"
       ],
       "registryDependencies": [
         "@packed/utils"
@@ -148,8 +148,8 @@
       "title": "Button Group",
       "description": "Packed Button Group — warm, token-driven UI on sand surfaces.",
       "dependencies": [
-        "class-variance-authority",
-        "radix-ui"
+        "@base-ui/react",
+        "class-variance-authority"
       ],
       "registryDependencies": [
         "@packed/separator",
@@ -190,7 +190,7 @@
       "title": "Card",
       "description": "The warm surface container — Packed's workhorse layout primitive. White surface, soft border, generous radius.",
       "dependencies": [
-        "radix-ui"
+        "@base-ui/react"
       ],
       "registryDependencies": [
         "@packed/utils"
@@ -209,8 +209,8 @@
       "title": "Checkbox",
       "description": "Checkbox with label. Controlled.",
       "dependencies": [
-        "lucide-react",
-        "radix-ui"
+        "@base-ui/react",
+        "lucide-react"
       ],
       "registryDependencies": [
         "@packed/utils"
@@ -229,7 +229,7 @@
       "title": "Collapsible",
       "description": "Packed Collapsible — warm, token-driven UI on sand surfaces.",
       "dependencies": [
-        "radix-ui"
+        "@base-ui/react"
       ],
       "registryDependencies": [
         "@packed/utils"
@@ -253,6 +253,7 @@
       ],
       "registryDependencies": [
         "@packed/dialog",
+        "@packed/input-group",
         "@packed/utils"
       ],
       "files": [
@@ -293,8 +294,8 @@
       "title": "Dialog",
       "description": "Packed Dialog — warm, token-driven UI on sand surfaces.",
       "dependencies": [
-        "lucide-react",
-        "radix-ui"
+        "@base-ui/react",
+        "lucide-react"
       ],
       "registryDependencies": [
         "@packed/button",
@@ -314,6 +315,7 @@
       "title": "Drawer",
       "description": "Packed Drawer — warm, token-driven UI on sand surfaces.",
       "dependencies": [
+        "@base-ui/react",
         "vaul"
       ],
       "registryDependencies": [
@@ -333,8 +335,8 @@
       "title": "Dropdown Menu",
       "description": "Packed Dropdown Menu — warm, token-driven UI on sand surfaces.",
       "dependencies": [
-        "lucide-react",
-        "radix-ui"
+        "@base-ui/react",
+        "lucide-react"
       ],
       "registryDependencies": [
         "@packed/utils"
@@ -393,7 +395,7 @@
       "title": "Form",
       "description": "Packed Form — warm, token-driven UI on sand surfaces.",
       "dependencies": [
-        "radix-ui",
+        "@base-ui/react",
         "react-hook-form"
       ],
       "registryDependencies": [
@@ -414,7 +416,7 @@
       "title": "Hover Card",
       "description": "Packed Hover Card — warm, token-driven UI on sand surfaces.",
       "dependencies": [
-        "radix-ui"
+        "@base-ui/react"
       ],
       "registryDependencies": [
         "@packed/utils"
@@ -432,7 +434,9 @@
       "type": "registry:ui",
       "title": "Input",
       "description": "Text field with label, helper text, error state, and optional leading/trailing icons. Focus shows a warm brand ring.",
-      "dependencies": [],
+      "dependencies": [
+        "@base-ui/react"
+      ],
       "registryDependencies": [
         "@packed/utils"
       ],
@@ -492,8 +496,8 @@
       "title": "Item",
       "description": "Packed Item — warm, token-driven UI on sand surfaces.",
       "dependencies": [
-        "class-variance-authority",
-        "radix-ui"
+        "@base-ui/react",
+        "class-variance-authority"
       ],
       "registryDependencies": [
         "@packed/separator",
@@ -529,9 +533,7 @@
       "type": "registry:ui",
       "title": "Label",
       "description": "Packed Label — warm, token-driven UI on sand surfaces.",
-      "dependencies": [
-        "radix-ui"
-      ],
+      "dependencies": [],
       "registryDependencies": [
         "@packed/utils"
       ],
@@ -565,8 +567,8 @@
       "title": "Menubar",
       "description": "Packed Menubar — warm, token-driven UI on sand surfaces.",
       "dependencies": [
-        "lucide-react",
-        "radix-ui"
+        "@base-ui/react",
+        "lucide-react"
       ],
       "registryDependencies": [
         "@packed/utils"
@@ -585,9 +587,9 @@
       "title": "Navigation Menu",
       "description": "Packed Navigation Menu — warm, token-driven UI on sand surfaces.",
       "dependencies": [
+        "@base-ui/react",
         "class-variance-authority",
-        "lucide-react",
-        "radix-ui"
+        "lucide-react"
       ],
       "registryDependencies": [
         "@packed/utils"
@@ -626,7 +628,7 @@
       "title": "Popover",
       "description": "Packed Popover — warm, token-driven UI on sand surfaces.",
       "dependencies": [
-        "radix-ui"
+        "@base-ui/react"
       ],
       "registryDependencies": [
         "@packed/utils"
@@ -645,7 +647,7 @@
       "title": "Progress",
       "description": "Packed Progress — warm, token-driven UI on sand surfaces.",
       "dependencies": [
-        "radix-ui"
+        "@base-ui/react"
       ],
       "registryDependencies": [
         "@packed/utils"
@@ -664,8 +666,8 @@
       "title": "Radio Group",
       "description": "Packed Radio Group — warm, token-driven UI on sand surfaces.",
       "dependencies": [
-        "lucide-react",
-        "radix-ui"
+        "@base-ui/react",
+        "lucide-react"
       ],
       "registryDependencies": [
         "@packed/utils"
@@ -684,7 +686,7 @@
       "title": "Scroll Area",
       "description": "Packed Scroll Area — warm, token-driven UI on sand surfaces.",
       "dependencies": [
-        "radix-ui"
+        "@base-ui/react"
       ],
       "registryDependencies": [
         "@packed/utils"
@@ -703,8 +705,8 @@
       "title": "Select",
       "description": "Native select styled to match Input, with a custom chevron.",
       "dependencies": [
-        "lucide-react",
-        "radix-ui"
+        "@base-ui/react",
+        "lucide-react"
       ],
       "registryDependencies": [
         "@packed/utils"
@@ -723,7 +725,7 @@
       "title": "Separator",
       "description": "Packed Separator — warm, token-driven UI on sand surfaces.",
       "dependencies": [
-        "radix-ui"
+        "@base-ui/react"
       ],
       "registryDependencies": [
         "@packed/utils"
@@ -742,8 +744,8 @@
       "title": "Sheet",
       "description": "Packed Sheet — warm, token-driven UI on sand surfaces.",
       "dependencies": [
-        "lucide-react",
-        "radix-ui"
+        "@base-ui/react",
+        "lucide-react"
       ],
       "registryDependencies": [
         "@packed/utils"
@@ -762,9 +764,9 @@
       "title": "Sidebar",
       "description": "Packed Sidebar — warm, token-driven UI on sand surfaces.",
       "dependencies": [
+        "@base-ui/react",
         "class-variance-authority",
-        "lucide-react",
-        "radix-ui"
+        "lucide-react"
       ],
       "registryDependencies": [
         "@packed/button",
@@ -806,7 +808,7 @@
       "title": "Slider",
       "description": "Packed Slider — warm, token-driven UI on sand surfaces.",
       "dependencies": [
-        "radix-ui"
+        "@base-ui/react"
       ],
       "registryDependencies": [
         "@packed/utils"
@@ -864,7 +866,7 @@
       "title": "Switch",
       "description": "On/off toggle with a soft sliding thumb. Use for settings and notification preferences.",
       "dependencies": [
-        "radix-ui"
+        "@base-ui/react"
       ],
       "registryDependencies": [
         "@packed/utils"
@@ -900,8 +902,8 @@
       "title": "Tabs",
       "description": "Underline tab bar with optional icons and counts. Controlled via `value` + `onChange`.",
       "dependencies": [
-        "class-variance-authority",
-        "radix-ui"
+        "@base-ui/react",
+        "class-variance-authority"
       ],
       "registryDependencies": [
         "@packed/utils"
@@ -966,8 +968,8 @@
       "title": "Toggle",
       "description": "Packed Toggle — warm, token-driven UI on sand surfaces.",
       "dependencies": [
-        "class-variance-authority",
-        "radix-ui"
+        "@base-ui/react",
+        "class-variance-authority"
       ],
       "registryDependencies": [
         "@packed/utils"
@@ -986,7 +988,7 @@
       "title": "Toggle Group",
       "description": "Packed Toggle Group — warm, token-driven UI on sand surfaces.",
       "dependencies": [
-        "radix-ui"
+        "@base-ui/react"
       ],
       "registryDependencies": [
         "@packed/toggle",
@@ -1006,7 +1008,7 @@
       "title": "Tooltip",
       "description": "Packed Tooltip — warm, token-driven UI on sand surfaces.",
       "dependencies": [
-        "radix-ui"
+        "@base-ui/react"
       ],
       "registryDependencies": [
         "@packed/utils"

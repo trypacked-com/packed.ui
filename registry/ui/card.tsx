@@ -1,36 +1,46 @@
-import { Slot } from "radix-ui";
+import { mergeProps } from "@base-ui/react/merge-props";
+import { useRender } from "@base-ui/react/use-render";
 import type * as React from "react";
 
 import { cn } from "@/registry/lib/utils";
 
 function Card({
   className,
+  size = "default",
   padded = true,
   interactive = false,
-  asChild = false,
+  render,
   ...props
-}: React.ComponentProps<"div"> & {
+}: useRender.ComponentProps<"div"> & {
+  size?: "default" | "sm";
   padded?: boolean;
   interactive?: boolean;
-  asChild?: boolean;
 }) {
-  const Comp = asChild ? Slot.Root : "div";
-
-  return (
-    <Comp
-      data-slot="card"
-      data-padded={padded}
-      data-interactive={interactive}
-      className={cn(
-        "group/card flex flex-col overflow-hidden rounded-lg border border-border-subtle bg-card text-card-foreground shadow-card",
-        padded && "gap-5 p-5",
-        interactive &&
-          "cursor-pointer transition-all duration-[var(--dur-base)] ease-[var(--ease-out)] hover:-translate-y-0.5 hover:shadow-card-hover motion-reduce:transition-none motion-reduce:hover:translate-y-0",
-        className,
-      )}
-      {...props}
-    />
-  );
+  return useRender({
+    defaultTagName: "div",
+    props: mergeProps<"div">(
+      {
+        className: cn(
+          "group/card flex flex-col overflow-hidden rounded-lg border border-border-subtle bg-card text-card-foreground shadow-card",
+          size === "sm"
+            ? "[--card-spacing:--spacing(4)]"
+            : "[--card-spacing:--spacing(5)]",
+          padded && "gap-(--card-spacing) p-(--card-spacing)",
+          interactive &&
+            "cursor-pointer transition-all duration-[var(--dur-base)] ease-[var(--ease-out)] hover:-translate-y-0.5 hover:shadow-card-hover motion-reduce:transition-none motion-reduce:hover:translate-y-0",
+          className,
+        ),
+      },
+      props,
+    ),
+    render,
+    state: {
+      slot: "card",
+      size,
+      padded,
+      interactive,
+    },
+  });
 }
 
 function CardMedia({ className, ...props }: React.ComponentProps<"div">) {
@@ -90,8 +100,8 @@ function CardHeader({ className, ...props }: React.ComponentProps<"div">) {
     <div
       data-slot="card-header"
       className={cn(
-        "@container/card-header grid auto-rows-min grid-rows-[auto_auto] items-start gap-1.5 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-5",
-        "group-data-[padded=false]/card:px-5 group-data-[padded=false]/card:pt-5",
+        "@container/card-header grid auto-rows-min grid-rows-[auto_auto] items-start gap-1.5 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-(--card-spacing)",
+        "group-data-[padded=false]/card:px-(--card-spacing) group-data-[padded=false]/card:pt-(--card-spacing)",
         className,
       )}
       {...props}
@@ -103,7 +113,10 @@ function CardTitle({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
       data-slot="card-title"
-      className={cn("font-semibold leading-none text-strong", className)}
+      className={cn(
+        "font-semibold leading-none text-strong group-data-[size=sm]/card:text-sm",
+        className,
+      )}
       {...props}
     />
   );
@@ -149,7 +162,10 @@ function CardContent({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
       data-slot="card-content"
-      className={cn("group-data-[padded=false]/card:px-5", className)}
+      className={cn(
+        "group-data-[padded=false]/card:px-(--card-spacing)",
+        className,
+      )}
       {...props}
     />
   );
@@ -161,8 +177,8 @@ function CardFooter({ className, ...props }: React.ComponentProps<"div">) {
       data-slot="card-footer"
       className={cn(
         "flex items-center gap-2 border-t border-border-subtle",
-        "group-data-[padded=true]/card:-mx-5 group-data-[padded=true]/card:px-5 group-data-[padded=true]/card:pt-4",
-        "group-data-[padded=false]/card:mx-5 group-data-[padded=false]/card:px-0 group-data-[padded=false]/card:py-4",
+        "group-data-[padded=true]/card:-mx-(--card-spacing) group-data-[padded=true]/card:px-(--card-spacing) group-data-[padded=true]/card:pt-4",
+        "group-data-[padded=false]/card:mx-(--card-spacing) group-data-[padded=false]/card:px-0 group-data-[padded=false]/card:py-4",
         className,
       )}
       {...props}

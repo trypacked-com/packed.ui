@@ -3,7 +3,7 @@
   "type": "registry:ui",
   "title": "Tabs",
   "description": "Underline tab bar with optional icons and counts. Controlled via `value` + `onChange`.",
-  "dependencies": ["class-variance-authority", "radix-ui"],
+  "dependencies": ["@base-ui/react", "class-variance-authority"],
   "registryDependencies": ["@packed/utils"],
   "files": [
     {

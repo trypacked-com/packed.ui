@@ -28,8 +28,8 @@ export const Default: Story = {
 export const Left: Story = {
   render: () => (
     <Sheet>
-      <SheetTrigger asChild>
-        <Button variant="outline">Boarding pass</Button>
+      <SheetTrigger render={<Button variant="outline" />}>
+        Boarding pass
       </SheetTrigger>
       <SheetContent side="left">
         <SheetHeader>

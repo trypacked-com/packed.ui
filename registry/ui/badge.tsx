@@ -1,6 +1,6 @@
+import { mergeProps } from "@base-ui/react/merge-props";
+import { useRender } from "@base-ui/react/use-render";
 import { cva, type VariantProps } from "class-variance-authority";
-import { Slot } from "radix-ui";
-import type * as React from "react";
 
 import { cn } from "@/registry/lib/utils";
 
@@ -44,7 +44,7 @@ function StatusDot({
 }
 
 const badgeVariants = cva(
-  "inline-flex w-fit shrink-0 items-center justify-center gap-1.5 overflow-hidden rounded-pill border border-transparent px-2.5 py-0.5 text-xs font-medium whitespace-nowrap transition-[color,box-shadow] focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 [&>svg]:pointer-events-none [&>svg]:size-3",
+  "group/badge inline-flex w-fit shrink-0 items-center justify-center gap-1.5 overflow-hidden rounded-pill border border-transparent px-2.5 py-0.5 text-xs font-medium whitespace-nowrap transition-[color,box-shadow] focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 [&>svg]:pointer-events-none [&>svg]:size-3",
   {
     variants: {
       variant: {
@@ -56,12 +56,9 @@ const badgeVariants = cva(
         outline: "border-border text-foreground [a&]:hover:bg-brand-subtle",
         ghost: "[a&]:hover:bg-brand-subtle",
         link: "text-link underline-offset-4 [a&]:hover:underline",
-        // Soft brand badge
         brand: "bg-brand-subtle text-link [a&]:hover:bg-brand-subtle",
-        // Neutral / branded chips
         tag: "border-border bg-card text-foreground text-sm [a&]:hover:bg-brand-subtle",
         tagBrand: "border-brand bg-brand-subtle text-link text-sm",
-        // Status — functional fg/bg pairs (domain labels live in the app)
         success:
           "gap-[7px] bg-status-ontime-bg px-3 py-1.5 pl-2.5 text-sm text-status-ontime-fg font-semibold",
         info: "gap-[7px] bg-status-info-bg px-3 py-1.5 pl-2.5 text-sm text-status-info-fg font-semibold",
@@ -82,36 +79,43 @@ const badgeVariants = cva(
 function Badge({
   className,
   variant = "default",
-  asChild = false,
   pulse = false,
+  render,
   children,
   ...props
-}: React.ComponentProps<"span"> &
+}: useRender.ComponentProps<"span"> &
   VariantProps<typeof badgeVariants> & {
-    asChild?: boolean;
     pulse?: boolean;
   }) {
-  const Comp = asChild ? Slot.Root : "span";
   const isStatus = STATUS_VARIANTS.includes(
     variant as (typeof STATUS_VARIANTS)[number],
   );
 
-  return (
-    <Comp
-      data-slot="badge"
-      data-variant={variant}
-      className={cn(badgeVariants({ variant }), className)}
-      {...props}
-    >
-      {isStatus ? (
-        <StatusDot
-          variant={variant as (typeof STATUS_VARIANTS)[number]}
-          pulse={pulse}
-        />
-      ) : null}
-      {children}
-    </Comp>
-  );
+  return useRender({
+    defaultTagName: "span",
+    props: mergeProps<"span">(
+      {
+        className: cn(badgeVariants({ variant }), className),
+        children: (
+          <>
+            {isStatus ? (
+              <StatusDot
+                variant={variant as (typeof STATUS_VARIANTS)[number]}
+                pulse={pulse}
+              />
+            ) : null}
+            {children}
+          </>
+        ),
+      },
+      props,
+    ),
+    render,
+    state: {
+      slot: "badge",
+      variant,
+    },
+  });
 }
 
 export { Badge, badgeVariants };

@@ -15,7 +15,7 @@ const alertVariants = cva(
         success:
           "border-l-status-ontime-fg [&_[data-slot=alert-icon]]:bg-status-ontime-bg [&_[data-slot=alert-icon]]:text-status-ontime-fg",
         warning:
-          "border-l-[var(--amber-500)] [&_[data-slot=alert-icon]]:bg-status-delay-bg [&_[data-slot=alert-icon]]:text-status-delay-fg",
+          "border-l-status-delay-fg [&_[data-slot=alert-icon]]:bg-status-delay-bg [&_[data-slot=alert-icon]]:text-status-delay-fg",
         destructive:
           "border-l-status-cancel-fg [&_[data-slot=alert-icon]]:bg-status-cancel-bg [&_[data-slot=alert-icon]]:text-status-cancel-fg",
       },
@@ -130,8 +130,19 @@ function AlertDismiss({ className, ...props }: React.ComponentProps<"button">) {
   );
 }
 
+function AlertAction({ className, ...props }: React.ComponentProps<"div">) {
+  return (
+    <div
+      data-slot="alert-action"
+      className={cn("shrink-0", className)}
+      {...props}
+    />
+  );
+}
+
 export {
   Alert,
+  AlertAction,
   AlertContent,
   AlertDescription,
   AlertDismiss,
