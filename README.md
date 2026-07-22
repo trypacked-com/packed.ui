@@ -5,7 +5,7 @@
   </picture>
 </p>
 
-<h1 align="center">packed.ui</h1>
+<h1 align="center">Packed.ui</h1>
 
 <p align="center">
   shadcn-compatible component registry.<br>
