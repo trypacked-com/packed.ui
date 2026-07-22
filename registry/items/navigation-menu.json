@@ -3,8 +3,14 @@
   "type": "registry:ui",
   "title": "Navigation Menu",
   "description": "Packed Navigation Menu — warm, token-driven UI on sand surfaces.",
-  "dependencies": ["class-variance-authority", "lucide-react", "radix-ui"],
-  "registryDependencies": ["@packed/utils"],
+  "dependencies": [
+    "@base-ui/react",
+    "class-variance-authority",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@packed/utils"
+  ],
   "files": [
     {
       "path": "registry/ui/navigation-menu.tsx",

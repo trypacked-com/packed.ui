@@ -3,8 +3,12 @@
   "type": "registry:ui",
   "title": "Switch",
   "description": "On/off toggle with a soft sliding thumb. Use for settings and notification preferences.",
-  "dependencies": ["radix-ui"],
-  "registryDependencies": ["@packed/utils"],
+  "dependencies": [
+    "@base-ui/react"
+  ],
+  "registryDependencies": [
+    "@packed/utils"
+  ],
   "files": [
     {
       "path": "registry/ui/switch.tsx",

@@ -3,8 +3,13 @@
   "type": "registry:ui",
   "title": "Sheet",
   "description": "Packed Sheet — warm, token-driven UI on sand surfaces.",
-  "dependencies": ["lucide-react", "radix-ui"],
-  "registryDependencies": ["@packed/utils"],
+  "dependencies": [
+    "@base-ui/react",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@packed/utils"
+  ],
   "files": [
     {
       "path": "registry/ui/sheet.tsx",

@@ -3,8 +3,12 @@
   "type": "registry:ui",
   "title": "Separator",
   "description": "Packed Separator — warm, token-driven UI on sand surfaces.",
-  "dependencies": ["radix-ui"],
-  "registryDependencies": ["@packed/utils"],
+  "dependencies": [
+    "@base-ui/react"
+  ],
+  "registryDependencies": [
+    "@packed/utils"
+  ],
   "files": [
     {
       "path": "registry/ui/separator.tsx",
