@@ -1,5 +1,6 @@
 import { readFile } from "node:fs/promises";
 import { resolve } from "node:path";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
@@ -23,6 +24,23 @@ const components = (registry.items as RegistryItem[]).filter(
 
 export function generateStaticParams() {
   return components.map((item) => ({ slug: item.name }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const item = components.find((entry) => entry.name === slug);
+
+  if (!item) {
+    return { title: "Packed UI" };
+  }
+
+  return {
+    title: `${item.title ?? item.name} - Packed UI`,
+  };
 }
 
 export default async function ComponentPage({
