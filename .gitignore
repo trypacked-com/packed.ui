@@ -41,3 +41,4 @@ npm-debug.log*
 storybook-static/
 yarn-debug.log*
 yarn-error.log*
+.worktrees/
