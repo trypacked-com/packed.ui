@@ -1,70 +1,38 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import {
-  Calendar,
-  ChevronRight,
-  Compass,
-  Moon,
-  Plane,
-  Users,
-} from "lucide-react";
+import type { Meta, StoryObj } from "@storybook/react"
+import { Calendar, ChevronRight, Compass, Plane, Users } from "lucide-react"
 
-import { Avatar, AvatarFallback } from "@/registry/ui/avatar";
+import { Avatar, AvatarFallback } from "@/registry/ui/avatar"
 import {
   Card,
+  CardContent,
   CardDescription,
   CardFooter,
   CardHeader,
-  CardIcon,
-  CardMedia,
-  CardMediaAction,
-  CardMediaOverlay,
-  CardMeta,
   CardTitle,
-} from "@/registry/ui/card";
+} from "@/registry/ui/card"
 
 const meta: Meta<typeof Card> = {
   title: "UI/Card",
   component: Card,
   parameters: { layout: "centered" },
-};
+}
 
-export default meta;
+export default meta
 
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof meta>
 
 export const TripCard: Story = {
   render: () => (
-    <Card padded={false} interactive className="w-full max-w-xs">
-      <CardMedia>
-        <div className="size-full bg-linear-to-br from-sky-400 via-sky-500 to-brand" />
-        <CardMediaAction>
-          <span className="inline-flex items-center gap-1.5 rounded-pill bg-card px-2.5 py-1 text-xs font-semibold text-strong shadow-sm">
-            <span
-              className="size-1.5 rounded-full"
-              style={{ background: "var(--sky-500)" }}
-            />
-            In progress
-          </span>
-        </CardMediaAction>
-        <CardMediaOverlay>
-          <div>
-            <p className="font-serif font-semibold text-2xl text-white tracking-tight">
-              Lisbon
-            </p>
-            <p className="text-sm text-white/85">Portugal</p>
-          </div>
-        </CardMediaOverlay>
-      </CardMedia>
+    <Card interactive className="w-full max-w-xs">
       <CardHeader className="gap-3">
         <div className="flex items-center gap-2.5">
           <Avatar size="sm">
-            <AvatarFallback className="bg-brand text-on-brand">
-              MQ
-            </AvatarFallback>
+            <AvatarFallback className="bg-brand text-on-brand">MQ</AvatarFallback>
           </Avatar>
           <CardTitle className="text-base">Mara Quinn</CardTitle>
         </div>
-        <CardMeta>
+        <CardDescription>Lisbon · Portugal</CardDescription>
+        <div className="flex flex-wrap items-center gap-3 text-sm text-muted-text">
           <span className="inline-flex items-center gap-1.5">
             <Calendar className="size-4 text-subtle" />
             Jun 14 – 21
@@ -72,12 +40,9 @@ export const TripCard: Story = {
           <span className="inline-flex items-center gap-1.5">
             <Users className="size-4 text-subtle" />4
           </span>
-          <span className="inline-flex items-center gap-1.5">
-            <Moon className="size-4 text-subtle" />7 n
-          </span>
-        </CardMeta>
+        </div>
       </CardHeader>
-      <CardFooter className="border-t">
+      <CardFooter>
         <Plane className="size-4 shrink-0 text-brand" />
         <p className="min-w-0 flex-1 truncate text-sm text-muted-text">
           Boarding <span className="font-mono">TP1234</span> · Gate{" "}
@@ -87,18 +52,37 @@ export const TripCard: Story = {
       </CardFooter>
     </Card>
   ),
-};
+}
 
 export const StatCard: Story = {
   render: () => (
     <Card interactive className="w-full max-w-xs flex-row items-center gap-4">
-      <CardIcon>
+      <div className="flex size-10 shrink-0 items-center justify-center rounded-md bg-brand-subtle text-brand [&_svg]:size-5">
         <Compass />
-      </CardIcon>
+      </div>
       <CardHeader className="gap-0.5 p-0">
         <CardTitle className="font-serif text-3xl tracking-tight">8</CardTitle>
         <CardDescription>Active trips</CardDescription>
       </CardHeader>
     </Card>
   ),
-};
+}
+
+export const Basic: Story = {
+  render: () => (
+    <Card className="w-full max-w-sm">
+      <CardHeader>
+        <CardTitle>Boarding soon</CardTitle>
+        <CardDescription>
+          We&apos;ll watch <span className="font-mono">TP1234</span> from here.
+        </CardDescription>
+      </CardHeader>
+      <CardContent>
+        <p className="text-sm text-muted-text">
+          Gate <span className="font-mono">B7</span> ·{" "}
+          <span className="font-mono">08:45</span>
+        </p>
+      </CardContent>
+    </Card>
+  ),
+}

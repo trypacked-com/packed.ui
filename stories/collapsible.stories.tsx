@@ -21,11 +21,13 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   render: () => (
     <Collapsible className="w-full max-w-md">
-      <CollapsibleTrigger asChild>
-        <Button variant="outline" className="w-full justify-between">
-          Gate details
-          <ChevronDownIcon className="size-4" />
-        </Button>
+      <CollapsibleTrigger
+        render={
+          <Button variant="outline" className="w-full justify-between" />
+        }
+      >
+        Gate details
+        <ChevronDownIcon className="size-4" />
       </CollapsibleTrigger>
       <CollapsibleContent className="pt-2 text-sm text-muted-text">
         Your gate is <span className="font-mono">B7</span> — we&apos;ll ping you

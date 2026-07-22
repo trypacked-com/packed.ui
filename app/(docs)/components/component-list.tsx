@@ -46,20 +46,23 @@ export function ComponentList({ items }: { items: ComponentItem[] }) {
         <ul className="grid gap-3 sm:grid-cols-2">
           {filtered.map((item) => (
             <li key={item.name}>
-              <Card interactive asChild>
-                <Link
-                  href={`/components/${item.name}/`}
-                  className="h-full no-underline"
-                >
-                  <CardHeader>
-                    <CardTitle className="font-serif text-base">
-                      {item.title ?? item.name}
-                    </CardTitle>
-                    {item.description ? (
-                      <CardDescription>{item.description}</CardDescription>
-                    ) : null}
-                  </CardHeader>
-                </Link>
+              <Card
+                interactive
+                render={
+                  <Link
+                    href={`/components/${item.name}/`}
+                    className="h-full no-underline"
+                  />
+                }
+              >
+                <CardHeader>
+                  <CardTitle className="font-serif text-base">
+                    {item.title ?? item.name}
+                  </CardTitle>
+                  {item.description ? (
+                    <CardDescription>{item.description}</CardDescription>
+                  ) : null}
+                </CardHeader>
               </Card>
             </li>
           ))}
