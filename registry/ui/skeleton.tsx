@@ -1,13 +1,18 @@
-import { cn } from "@/registry/lib/utils"
+import type * as React from "react";
+
+import { cn } from "@/registry/lib/utils";
 
 function Skeleton({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
       data-slot="skeleton"
-      className={cn("animate-pulse rounded-md bg-muted", className)}
+      className={cn(
+        "animate-pulse rounded-md bg-surface-sunken motion-reduce:animate-none",
+        className,
+      )}
       {...props}
     />
-  )
+  );
 }
 
-export { Skeleton }
+export { Skeleton };

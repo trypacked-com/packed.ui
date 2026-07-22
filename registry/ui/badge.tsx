@@ -1,52 +1,121 @@
-import { mergeProps } from "@base-ui/react/merge-props"
-import { useRender } from "@base-ui/react/use-render"
-import { cva, type VariantProps } from "class-variance-authority"
+import { mergeProps } from "@base-ui/react/merge-props";
+import { useRender } from "@base-ui/react/use-render";
+import { cva, type VariantProps } from "class-variance-authority";
 
-import { cn } from "@/registry/lib/utils"
+import { cn } from "@/registry/lib/utils";
+
+const STATUS_VARIANTS = [
+  "success",
+  "info",
+  "warning",
+  "danger",
+  "neutral",
+] as const;
+
+const STATUS_DOT: Record<(typeof STATUS_VARIANTS)[number], string> = {
+  success: "var(--green-500)",
+  info: "var(--sky-500)",
+  warning: "var(--amber-500)",
+  danger: "var(--red-500)",
+  neutral: "var(--sand-500)",
+};
+
+function StatusDot({
+  variant,
+  pulse,
+}: {
+  variant: (typeof STATUS_VARIANTS)[number];
+  pulse?: boolean;
+}) {
+  return (
+    <span className="relative inline-flex size-2 shrink-0">
+      {pulse ? (
+        <span
+          className="absolute inset-0 animate-ping rounded-full opacity-50 motion-reduce:animate-none"
+          style={{ background: STATUS_DOT[variant] }}
+        />
+      ) : null}
+      <span
+        className="size-2 rounded-full"
+        style={{ background: STATUS_DOT[variant] }}
+      />
+    </span>
+  );
+}
 
 const badgeVariants = cva(
-  "group/badge inline-flex h-5 w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-4xl border border-transparent px-2 py-0.5 text-xs font-medium whitespace-nowrap transition-all focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 has-data-[icon=inline-end]:pr-1.5 has-data-[icon=inline-start]:pl-1.5 aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 [&>svg]:pointer-events-none [&>svg]:size-3!",
+  "group/badge inline-flex w-fit shrink-0 items-center justify-center gap-1.5 overflow-hidden rounded-pill border border-transparent px-2.5 py-0.5 text-xs font-medium whitespace-nowrap transition-[color,box-shadow] focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 [&>svg]:pointer-events-none [&>svg]:size-3",
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground [a]:hover:bg-primary/80",
+        default: "bg-brand text-on-brand [a&]:hover:bg-brand-hover",
         secondary:
-          "bg-secondary text-secondary-foreground [a]:hover:bg-secondary/80",
+          "bg-secondary text-secondary-foreground [a&]:hover:bg-brand-subtle",
         destructive:
-          "bg-destructive/10 text-destructive focus-visible:ring-destructive/20 dark:bg-destructive/20 dark:focus-visible:ring-destructive/40 [a]:hover:bg-destructive/20",
-        outline:
-          "border-border text-foreground [a]:hover:bg-muted [a]:hover:text-muted-foreground",
-        ghost:
-          "hover:bg-muted hover:text-muted-foreground dark:hover:bg-muted/50",
-        link: "text-primary underline-offset-4 hover:underline",
+          "bg-destructive text-white focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 [a&]:hover:bg-destructive/90",
+        outline: "border-border text-foreground [a&]:hover:bg-brand-subtle",
+        ghost: "[a&]:hover:bg-brand-subtle",
+        link: "text-link underline-offset-4 [a&]:hover:underline",
+        brand: "bg-brand-subtle text-link [a&]:hover:bg-brand-subtle",
+        tag: "border-border bg-card text-foreground text-sm [a&]:hover:bg-brand-subtle",
+        tagBrand: "border-brand bg-brand-subtle text-link text-sm",
+        success:
+          "gap-[7px] bg-status-ontime-bg px-3 py-1.5 pl-2.5 text-sm text-status-ontime-fg font-semibold",
+        info: "gap-[7px] bg-status-info-bg px-3 py-1.5 pl-2.5 text-sm text-status-info-fg font-semibold",
+        warning:
+          "gap-[7px] bg-status-delay-bg px-3 py-1.5 pl-2.5 text-sm text-status-delay-fg font-semibold",
+        danger:
+          "gap-[7px] bg-status-cancel-bg px-3 py-1.5 pl-2.5 text-sm text-status-cancel-fg font-semibold",
+        neutral:
+          "gap-[7px] bg-muted px-3 py-1.5 pl-2.5 text-sm text-muted-text font-semibold",
       },
     },
     defaultVariants: {
       variant: "default",
     },
-  }
-)
+  },
+);
 
 function Badge({
   className,
   variant = "default",
+  pulse = false,
   render,
+  children,
   ...props
-}: useRender.ComponentProps<"span"> & VariantProps<typeof badgeVariants>) {
+}: useRender.ComponentProps<"span"> &
+  VariantProps<typeof badgeVariants> & {
+    pulse?: boolean;
+  }) {
+  const isStatus = STATUS_VARIANTS.includes(
+    variant as (typeof STATUS_VARIANTS)[number],
+  );
+
   return useRender({
     defaultTagName: "span",
     props: mergeProps<"span">(
       {
         className: cn(badgeVariants({ variant }), className),
+        children: (
+          <>
+            {isStatus ? (
+              <StatusDot
+                variant={variant as (typeof STATUS_VARIANTS)[number]}
+                pulse={pulse}
+              />
+            ) : null}
+            {children}
+          </>
+        ),
       },
-      props
+      props,
     ),
     render,
     state: {
       slot: "badge",
       variant,
     },
-  })
+  });
 }
 
-export { Badge, badgeVariants }
+export { Badge, badgeVariants };
