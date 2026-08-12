@@ -1,13 +1,1 @@
-<svg width="500" height="500" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect width="500" height="500" fill="url(#paint0_linear_118_2)"/>
-<path d="M173.5 154.125V120.125C173.5 105.472 179.321 91.4187 189.682 81.0573C200.044 70.696 214.097 64.875 228.75 64.875H271.25C285.903 64.875 299.956 70.696 310.318 81.0573C320.679 91.4187 326.5 105.472 326.5 120.125V154.125" stroke="white" stroke-width="33.6" stroke-linecap="round"/>
-<path d="M343.5 154.125H156.5C114.25 154.125 80 188.375 80 230.625V358.125C80 400.375 114.25 434.625 156.5 434.625H343.5C385.75 434.625 420 400.375 420 358.125V230.625C420 188.375 385.75 154.125 343.5 154.125Z" fill="white"/>
-<path opacity="0.85" d="M420 245.925H80V279.925H420V245.925Z" fill="#FF6B2C" fill-opacity="0.55"/>
-<path d="M289.1 235.725H210.9C198.694 235.725 188.8 245.62 188.8 257.825V268.025C188.8 280.231 198.694 290.125 210.9 290.125H289.1C301.305 290.125 311.2 280.231 311.2 268.025V257.825C311.2 245.62 301.305 235.725 289.1 235.725Z" fill="#FF6B2C"/>
-<defs>
-<linearGradient id="paint0_linear_118_2" x1="0" y1="0" x2="0" y2="500" gradientUnits="userSpaceOnUse">
-<stop stop-color="#FF8147"/>
-<stop offset="1" stop-color="#ED5418"/>
-</linearGradient>
-</defs>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="none" viewBox="0 0 500 500"><path fill="url(#a)" d="M0 0h500v500H0z"/><path stroke="#fff" stroke-linecap="round" stroke-width="33.6" d="M173.5 154.125v-34a55.25 55.25 0 0 1 55.25-55.25h42.5a55.253 55.253 0 0 1 55.25 55.25v34"/><path fill="#fff" d="M343.5 154.125h-187c-42.25 0-76.5 34.25-76.5 76.5v127.5c0 42.25 34.25 76.5 76.5 76.5h187c42.25 0 76.5-34.25 76.5-76.5v-127.5c0-42.25-34.25-76.5-76.5-76.5"/><path fill="#ff6b2c" fill-opacity=".55" d="M420 245.925H80v34h340z" opacity=".85"/><path fill="#ff6b2c" d="M289.1 235.725h-78.2c-12.206 0-22.1 9.895-22.1 22.1v10.2c0 12.206 9.894 22.1 22.1 22.1h78.2c12.205 0 22.1-9.894 22.1-22.1v-10.2c0-12.205-9.895-22.1-22.1-22.1"/><defs><linearGradient id="a" x1="0" x2="0" y1="0" y2="500" gradientUnits="userSpaceOnUse"><stop stop-color="#ff8147"/><stop offset="1" stop-color="#ed5418"/></linearGradient></defs></svg>
