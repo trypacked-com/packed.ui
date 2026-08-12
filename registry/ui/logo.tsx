@@ -47,7 +47,7 @@ function Logo({
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 48 48"
+      viewBox="0 0 500 500"
       fill="none"
       role="img"
       aria-label="Packed"
@@ -55,33 +55,23 @@ function Logo({
       {...props}
     >
       <path
-        d="M17.5 15 V12 A5 5 0 0 1 22.5 7 H25.5 A5 5 0 0 1 30.5 12 V15"
-        strokeWidth={3.2}
+        d="M179.688 164.062V132.812C179.688 119.344 185.038 106.428 194.561 96.9047C204.084 87.3814 217.001 82.0313 230.469 82.0313H269.531C282.999 82.0312 295.916 87.3814 305.439 96.9047C314.962 106.428 320.312 119.344 320.312 132.812V164.062"
+        strokeWidth={33.6}
         strokeLinecap="round"
         fill="none"
         style={{ stroke: colors.stroke }}
       />
-      <rect
-        x={7}
-        y={15}
-        width={34}
-        height={26}
-        rx={6.5}
+      <path
+        d="M335.938 164.062H164.062C125.23 164.062 93.75 195.542 93.75 234.375V351.562C93.75 390.395 125.23 421.875 164.062 421.875H335.938C374.77 421.875 406.25 390.395 406.25 351.562V234.375C406.25 195.542 374.77 164.062 335.938 164.062Z"
         style={{ fill: colors.body }}
       />
-      <rect
-        x={7}
-        y={22.6}
-        width={34}
-        height={3.2}
-        style={{ fill: colors.band, opacity: colors.bandOpacity }}
+      <path
+        d="M406.25 248.438H93.75V279.688H406.25V248.438Z"
+        opacity={0.85}
+        style={{ fill: colors.band, fillOpacity: colors.bandOpacity }}
       />
-      <rect
-        x={18.8}
-        y={21.4}
-        width={10.4}
-        height={4.8}
-        rx={2}
+      <path
+        d="M285.938 239.062H214.063C202.844 239.062 193.75 248.157 193.75 259.375V268.75C193.75 279.968 202.844 289.062 214.063 289.062H285.938C297.156 289.062 306.25 279.968 306.25 268.75V259.375C306.25 248.157 297.156 239.062 285.938 239.062Z"
         style={{ fill: colors.latch }}
       />
     </svg>
